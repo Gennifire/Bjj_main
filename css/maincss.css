@@ -21,19 +21,19 @@ body,
 }
 
 .slide1 {
-	background-image: url("../pics/bjjlogo.png");
+	background-image: url("../pics/mainslide/bjjlogo.png");
 }
 
 .slide2 {
-	background-image: url("../pics/bjjpic2.jpg");
+	background-image: url("../pics/mainslide/bjjpic2.jpg");
 }
 
 .slide3 {
-	background-image: url("../pics/bjjclass.jpg");
+	background-image: url("../pics/mainslide/bjjclass.jpg");
 }
 
 .slide4 {
-	background-image: url("../pics/bjjclass2.jpg");
+	background-image: url("../pics/mainslide/bjjclass2.jpg");
 }
 
 .slide-content {

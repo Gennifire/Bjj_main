@@ -29,42 +29,9 @@ include("includes/sideNav.php");
 <body>
 
 	<!--Main Slider Start-->
-	<div class="wrap">
-
-		<div id="arrow-left" class="arrow"></div>
-
-		<div id="slider">
-
-			<div class="slide slide1">
-				<div class="slide-content">
-
-				</div>
-			</div>
-
-			<div class="slide slide2">
-				<div class="slide-content">
-
-				</div>
-			</div>
-
-			<div class="slide slide3">
-				<div class="slide-content">
-
-				</div>
-			</div>
-
-			<div class="slide slide4">
-				<div class="slide-content">
-
-				</div>
-			</div>
-
-		</div>
-
-		<div id="arrow-right" class="arrow"></div>
-
-	</div>
-
+	<?php
+	include("includes/slider.php");
+	?>
 	<!--Main Slider End-->
 
 

@@ -6,10 +6,10 @@
 			<a class="nav-link active" href="Main.php">Home</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#">Gallery </a>
+			<a class="nav-link" href="gallery.php">Gallery </a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="memberships.php">Memberships </a>
+			<a class="nav-link" href="membership.php">Memberships </a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="signUp.php">Sign up </a>

@@ -1,0 +1,161 @@
+body,
+#slider,
+.wrap,
+.slide-content {
+	height: 90vh;
+	background-repeat: no-repeat;
+	justify-content: center;
+	margin: 0%;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+/*Main slide start */
+.wrap {
+	position: relative;
+}
+
+.slide {
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.slide1 {
+	background-image: url("../pics/bjjlogo.png");
+}
+
+.slide2 {
+	background-image: url("../pics/bjjpic2.jpg");
+}
+
+.slide3 {
+	background-image: url("../pics/bjjclass.jpg");
+}
+
+.slide4 {
+	background-image: url("../pics/bjjclass2.jpg");
+}
+
+.slide-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.arrow {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+}
+
+#arrow-left {
+	border-width: 30px 40px 30px 0;
+	border-color: transparent #1c8adb transparent transparent;
+	left: 60px;
+	margin-left: 30px;
+}
+
+#arrow-right {
+	border-width: 30px 0 30px 40px;
+	border-color: transparent transparent transparent #1c8adb;
+	right: 60px;
+	margin-right: 30px;
+}
+
+/*Main slide ends*/
+
+/*sideNav start */
+
+#mySidenav a {
+	position: absolute;
+	left: -80px;
+	transition: 0.3s;
+	padding: 10px;
+	width: 150px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #ebecf0;
+	border-radius: 0 5px 5px 0;
+	margin-top: 8em;
+	z-index: 1;
+}
+
+#mySidenav a:hover {
+	left: 0;
+}
+
+
+#about {
+	top: 10px;
+	background-color: #1c8adb;
+	box-shadow: 0 10px 16px #130B8F;
+}
+
+#gallery {
+	top: 70px;
+	background-color: #1654C3;
+	box-shadow: 0 10px 16px #1027A9;
+}
+
+#projects {
+	top: 130px;
+	background-color: #1027A9;
+	box-shadow: 0 10px 16px #1654C3;
+}
+
+#contact {
+	top: 190px;
+	background-color: #130B8F;
+	box-shadow: 0 10px 16px #1c8adb;
+}
+
+/*sideNav end*/
+
+/*Footer start*/
+footer {
+	color: #ebecf0;
+	bottom: -180px;
+	width: 100%;
+	height: 200px;
+	background: black;
+	position: fixed;
+	z-index: 1;
+}
+
+footer p {
+	color: #5a5b62;
+}
+
+.btmTag {
+	background: #ebecf0;
+	padding: 2rem .7rem;
+	position: absolute;
+	top: -25%;
+	right: 1vw;
+	border-radius: 1em;
+}
+
+footer:hover {
+	bottom: 0;
+	transition: all 1s ease;
+}
+
+.footer .container {
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+
+}
+
+footer.footer .container>div {
+	flex-grow: 1;
+	flex-basis: 0;
+	padding-top: 25px;
+}
+
+/*Footer End*/

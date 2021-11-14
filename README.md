@@ -10,4 +10,3 @@ sidenav
 
 footer 
 
-slide show 

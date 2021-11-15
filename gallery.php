@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="css/gallerycss.css">
 
+
 </head>
 
 <!--top nav php-->

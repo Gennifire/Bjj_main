@@ -1,6 +1,6 @@
 <!--Contains the entire top nav-->
 
-<nav>
+<nav class="topNav">
 	<ul class="nav justify-content-end">
 		<li class="nav-item">
 			<a class="nav-link active" href="Main.php">Home</a>

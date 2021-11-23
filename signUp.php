@@ -26,56 +26,56 @@
 
 			<!--Add in the rest of the form elements-->
 			<div class="question-answer">
-			<input type="text" class="input-box" id="firstName" name="firstName" autofocus required size="20" placeholder="Please enter first name" required pattern="[a-zA-Z]+" onchange="return valCheck(1)" /> 
-			<span class="error1" id="error1" >  </span> 
+				<input type="text" class="input-box" id="firstName" name="firstName" autofocus required size="20" placeholder="Please enter first name" required pattern="[a-zA-Z]+" onchange="return valCheck(1)" onkeyup="valid(this,'special')> 
+			<span class=" error1" id="error1"> </span>
 			</div>
-		
-		
+
+
 			<p class="question2"></p>
 			<div class="question-answer">
-			<input type="text" class="input-box "id="lastName" name="lastName"  required  size="20" placeholder="Last Name" required pattern="[a-zA-Z]+" onchange="return valCheck(2)" />
-			<span class="error2" id="error2">  </span>  
+				<input type="text" class="input-box " id="lastName" name="lastName" required size="20" placeholder="Last Name" required pattern="[a-zA-Z]+" onchange="return valCheck(2)" onkeyup="valid(this,'special') >
+			<span class=" error2" id="error2"> </span>
 			</div>
-		        
-		
-        <p class="question3"></p>
-        <div class="question-answer">
-			<input type="email" class="input-box" name="email" placeholder="Email Address" id="email_field" size="50" onChange="return emailValidation()">
-			<span id="email-error"></span>   
-						
-        </div>
-		
-		
-		<p class="question4"></p>
-		<div class="question-answer">
-			<input id="theDate" class="input-box" required type="date" placeholder="Date of Birth" onchange="valCheck(3)" /> 
-			<span id="error3"> </span> 
-		</div>
-			
-						
-			<input type="password" class="input-box" placeholder="Password">
-			<span id="password-error"></span>
-			
+
+
+			<p class="question3"></p>
+			<div class="question-answer">
+				<input type="email" class="input-box" name="email" placeholder="Email Address" id="email_field" size="50" onChange="return emailValidation()" onkeyup="valid(this,'special')>
+			<span id=" email-error"></span>
+
+			</div>
+
+
+			<p class="question4"></p>
+			<div class="question-answer">
+				<input id="theDate" class="input-box" required type="date" placeholder="Date of Birth" onchange="valCheck(3)" onkeyup="valid(this,'special')> 
+			<span id=" {error3}"> </span>
+			</div>
+
+
+			<input type="password" class="input-box" placeholder="Password" onkeyup="valid(this,'special')>
+			<span id=" password-error"></span>
+
 			<input type="phone" class="input-box" placeholder="Phone" onchange="checkNum(this)">
 			<span id="phone-error"></span>
-			
+
 			<input type="Address1" class="input-box" placeholder="Address Line 1">
 			<input type="Address2" class="input-box" placeholder="Address Line 2">
 			<input type="Address3" class="input-box" placeholder="Address Line 2">
 
 			<label> County: </label>
 			<select name=slist class="input-box" id="county">
-			<script language="javascript">
-			var states = new Array("Carlow", "Cavan", "Clare", "Cork", "Donegal", "Dublin", "Galway", "Kerry", "Kildare", "Kilkenny", "Laois", "Leitrim", "Limerick", "Longford", "Louth", "Mayo", "Meath", "Monaghan", "Offaly", "Roscommon", "Sligo", "Tipperary", "Waterford", "Westmeath", "Wexford", "Wicklow");
+				<script language="javascript">
+					var states = new Array("Carlow", "Cavan", "Clare", "Cork", "Donegal", "Dublin", "Galway", "Kerry", "Kildare", "Kilkenny", "Laois", "Leitrim", "Limerick", "Longford", "Louth", "Mayo", "Meath", "Monaghan", "Offaly", "Roscommon", "Sligo", "Tipperary", "Waterford", "Westmeath", "Wexford", "Wicklow");
 
-			for(var hi=0; hi<states.length; hi++)
-			document.write("<option value=\""+states[hi]+"\">"+states[hi]+"</option>");
-			</script>
+					for (var hi = 0; hi < states.length; hi++)
+						document.write("<option value=\"" + states[hi] + "\">" + states[hi] + "</option>");
+				</script>
 			</select>
 			<br>
 
 			<label> Country: </label>
-			<select name="country" class="input-box" id="country" >
+			<select name="country" class="input-box" id="country">
 				<option value="">Country</option>
 				<option value="Afganistan">Afghanistan</option>
 				<option value="Albania">Albania</option>
@@ -324,10 +324,10 @@
 				<option value="Zaire">Zaire</option>
 				<option value="Zambia">Zambia</option>
 				<option value="Zimbabwe">Zimbabwe</option>
-				</select>
-				
-				<br> <br>
-				
+			</select>
+
+			<br> <br>
+
 			<p><span><input type="checkbox"></span> I agree to the Term of Service</p>
 
 			<button type="button" class="signUp-btn">Sign Up</button>
@@ -339,7 +339,7 @@
 	</div>
 
 
-<script rel="stylesheet" href="js/signUp.js"></script>
+	<script rel="stylesheet" href="js/signUp.js"></script>
 </body>
 
 </html>

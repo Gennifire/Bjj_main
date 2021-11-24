@@ -49,11 +49,11 @@
 			<p class="question4"></p>
 			<div class="question-answer">
 				<input id="theDate" class="input-box" required type="date" placeholder="Date of Birth" onchange="valCheck(3)" onkeyup="valid(this,'special')> 
-			<span id=" {error3}"> </span>
+			<span id=" error3"> </span>
 			</div>
 
 
-			<input type="password" class="input-box" placeholder="Password" onkeyup="valid(this,'special')>
+			<input type="password" class="input-box" placeholder="Password" onkeyup="valid(this,'special')/>
 			<span id=" password-error"></span>
 
 			<input type="phone" class="input-box" placeholder="Phone" onchange="checkNum(this)">

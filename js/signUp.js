@@ -115,12 +115,12 @@ function emailValidation() {
 
 //Check phone numbers
 function checkNum(as) {
-	var dd = as.value;
+	var phoneNum = as.value;
 
 	if (isNaN(dd))
 
 	{
-		dd = dd.substring(0, (dd.length - 1));
+		phoneNum = phoneNum.substring(0, (phoneNum.length - 1));
 		as.value = dd;
 	}
 

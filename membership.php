@@ -58,6 +58,7 @@ include("includes/topNav.php");
                     Per Month
                 </p>
                 <a href="" class="pricing-plan-button">Purchase</a>
+                <!--Try to link this to includes membership type selection -->
                 <p class="pricing-plan-text">Minimun spend €600 per year</p>
             </div>
         </section>
@@ -101,6 +102,7 @@ include("includes/topNav.php");
                     Per Month
                 </p>
                 <a href="" class="pricing-plan-button">Purchase</a>
+                <!--Try to link this to includes membership type selection -->
                 <p class="pricing-plan-text">Minimun spend €800 per year</p>
             </div>
         </section>
@@ -141,6 +143,7 @@ include("includes/topNav.php");
                     Per Month
                 </p>
                 <a href="" class="pricing-plan-button">Purchase</a>
+                <!--Try to link this to includes membership type selection -->
                 <p class="pricing-plan-text">Minimun spend €1000 per year</p>
             </div>
         </section>

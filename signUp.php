@@ -1,4 +1,5 @@
 <?php
+include("includes/register.php");
 include("includes/connection.php");
 ?>
 
@@ -24,46 +25,55 @@ include("includes/connection.php");
 	<!-- Sign up form -->
 
 	<div class="sign-up-form">
+
+
 		<img src="pics/blueUser-modified.png" height="50px">
 		<h1>Sign Up Now</h1>
-
-
-		<div class="box">
-
-			<div class="page">
-
-				<div id="errorMsg"></div>
-				<div class="content">
-
-					<form class="signup" name="signupForm" onsubmit="return validateSignupForm()" method="POST">
-						<input type="email" class="input-box" name="email" id="signEmail" placeholder="Email">
-						<input type="text" class="input-box" name="name" id="signName" placeholder="Username">
-						<input type="password" class="input-box" name="password" id="signPassword" placeholder="Password">
-
-						<br>
-
-						<p class="question"> Terms </p>
-						<label> I agree to the terms and conditions.</label>
-						<input id="terms" required type="checkbox" onclick="return formTerms()" />
-						<span id="error_terms"> </span>
-						<input type="submit" class="input-box" id="signup-btn " value="Sign Up">
-						<button class="input-box" type="reset" id="reset-btn" value="Reset" onclick="formReset()"> Reset </button>
-					</form>
+		<form action="register_a.php" method="post" enctype="multipart/form-data">
+			<h2>Register</h2>
+			<p class="hint-text">Create your account</p>
+			<div class="form-group">
+				<div class="row">
+					<div class="col"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
+					<div class="col"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
 				</div>
 			</div>
-		</div>
-
-
-		<br> <br>
-
-		<hr>
-		<p class="or-seperator"><b>OR</b></p>
-		<p>Already Have an account?</p>
-		<a href="logIn.php">
-
-			<u>Login</u>
-		</a>
+			<div class="form-group">
+				<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" name="pass" placeholder="Password" required="required">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" name="cpass" placeholder="Confirm Password" required="required">
+			</div>
+			<div class="form-group">
+				<input type="file" name="file" required>
+				<!-- <input type="submit" name="upload" value="Upload" class="btn"> -->
+			</div>
+			<div class="form-group">
+				<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> & <a href="#">Privacy Policy</a></label>
+			</div>
+			<div class="form-group">
+				<button type="submit" name="save" class="btn btn-success btn-lg btn-block">Register Now</button>
+			</div>
+			<div class="text-center">Already have an account? <a href="login.php">Sign in</a></div>
 		</form>
+	</div>
+	</div>
+
+
+
+	<br> <br>
+
+	<hr>
+	<p class="or-seperator"><b>OR</b></p>
+	<p>Already Have an account?</p>
+	<a href="logIn.php">
+
+		<u>Login</u>
+	</a>
+	</form>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

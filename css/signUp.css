@@ -8,6 +8,13 @@ body {
 	background-image: url(./pics/bjjlogo.png);
 }
 
+#errorMsg {
+	color: red;
+	text-align: center;
+	font-size: 12px;
+	padding-bottom: 20px;
+
+}
 
 
 .sign-up-form {
@@ -33,7 +40,7 @@ body {
 	outline: none;
 }
 
-#county #country{
+#county #country {
 	text-align: left;
 }
 
@@ -49,12 +56,13 @@ button {
 	cursor: pointer;
 }
 
-.signUp-btn {
+#signup-btn,
+#reset-btn {
 	background-color: #1c8adb;
 
 }
 
-.login-btn {
+#login-btn {
 	background-color: #21afde;
 }
 
@@ -67,11 +75,6 @@ hr {
 	width: 95%;
 }
 
-.or {
-	background: solid #fff;
-	width: 30px;
-	margin: -30px auto 10px;
-}
 
 .or {
 	background: solid #fff;

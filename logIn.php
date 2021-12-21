@@ -24,20 +24,36 @@
 		<img src="pics/blueUser-modified.png" height="50px">
 		<h1>Log in Now</h1>
 		<form>
-			<input type="username" class="input-box" placeholder="Email">
-			<input type="password" class="input-box" placeholder="Password">
+			<form class="login" name="loginForm" onsubmit="return validateLoginForm()" method="POST">
+				<input type="text" class="input-box" name="name" id="logName" placeholder="Username">
+				<input type="password" class="input-box" name="password" id="logPassword" placeholder="Password">
+				<div id="check">
+					<input type="checkbox" id="remember">
+					<label for="remember">Remember me</label>
+				</div>
+
+				<div id="errorMsg"></div>
+
+				<br><br>
+
+				<input class="input-box" id="login-btn" type="submit" value="Login">
+				<a href="#">Forgot Password?</a>
+
+			</form>
 
 
-			<button type="button" class="login-btn">Log In</button>
+
 			<hr>
 			<p class="or">OR</p>
 			<p>Not a Member?</p>
-			<button type="button" class="signup-btn" href="SignUp.html">Sign up</button>
+			<button type="button" id="signup-btn" href="SignUp.php">Sign up</button>
 		</form>
 	</div>
 
 
-
+	<script rel="stylesheet" href="js/logInSignUp.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+	</script>
 </body>
 
 </html>

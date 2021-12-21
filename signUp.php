@@ -26,32 +26,48 @@ include("includes/connection.php");
 	<div class="sign-up-form">
 		<img src="pics/blueUser-modified.png" height="50px">
 		<h1>Sign Up Now</h1>
-		
-
-			
-
-			<br> <br>
-
-			<p class="question"> Terms </p>
-			<label> I agree to the terms and conditions.</label>
-			<input id="terms" required type="checkbox" onclick="return formTerms()" />
-			<span id="error_terms"> </span>
 
 
-			<button class="input-box" type="submit" id="submitBtn" href="" disabled=""> Submit </button>
-			<button class="input-box" type="reset" id="resetBtn" onclick="formReset()"> Reset </button>
-			<hr>
-			<p class="or-seperator"><b>OR</b></p>
-			<p>Already Have an account?</p>
-			<a href="logIn.php">
-				
-				<u>Login</u>
-			</a>
+		<div class="box">
+
+			<div class="page">
+
+				<div id="errorMsg"></div>
+				<div class="content">
+
+					<form class="signup" name="signupForm" onsubmit="return validateSignupForm()" method="POST">
+						<input type="email" class="input-box" name="email" id="signEmail" placeholder="Email">
+						<input type="text" class="input-box" name="name" id="signName" placeholder="Username">
+						<input type="password" class="input-box" name="password" id="signPassword" placeholder="Password">
+
+						<br>
+
+						<p class="question"> Terms </p>
+						<label> I agree to the terms and conditions.</label>
+						<input id="terms" required type="checkbox" onclick="return formTerms()" />
+						<span id="error_terms"> </span>
+						<input type="submit" class="input-box" id="signup-btn " value="Sign Up">
+						<button class="input-box" type="reset" id="reset-btn" value="Reset" onclick="formReset()"> Reset </button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+		<br> <br>
+
+		<hr>
+		<p class="or-seperator"><b>OR</b></p>
+		<p>Already Have an account?</p>
+		<a href="logIn.php">
+
+			<u>Login</u>
+		</a>
 		</form>
 	</div>
 
-
-	<script rel="stylesheet" href="js/signUp.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script rel="stylesheet" href="js/logInSignUp.js"></script>
 </body>
 
 </html>

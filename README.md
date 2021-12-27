@@ -12,12 +12,15 @@ footer
 
 to do:
 
-create sign up and sign in
+-create sign up and sign in
 
-dashboard for sign in with ability to edit or remove character.
+-dashboard for sign in with ability to edit or remove character.
 
-membership buy.
+-membership buy.
 
 happens after sign up so we already have details.
-make mock receipt.
+make mock receipt/timetable.
 
+-Logout
+
+-timetable

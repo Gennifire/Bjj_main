@@ -10,7 +10,7 @@ if(mysqli_num_rows($sql)>0)
 else(isset($_POST['save']))
 {
     $file = rand(1000,100000)."-".$_FILES['file']['name'];
-    $file_loc = $_FILES['file']['tmp_name'];
+    $file_loc = $_FILES['file']['tmp_name']
     $folder="upload/";
     $new_file_name = strtolower($file);
     $final_file=str_replace(' ','-',$new_file_name);

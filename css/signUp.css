@@ -86,3 +86,11 @@ hr {
 img {
 	margin-top: -60px;
 }
+
+label {
+	text-align: left;
+}
+
+.btn btn-success {
+	background-color: #1c8adb;
+}

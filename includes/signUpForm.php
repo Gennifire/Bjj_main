@@ -27,7 +27,10 @@
 			<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> & <a href="#">Privacy Policy</a></label>
 		</div>
 		<div class="form-group">
-			<button type="submit" name="save" class="btn btn-success btn-lg btn-block">Register Now</button>
+			<button type="submit" name="save" class="signup-btn">Register Now</button>
+
+			<button type="reset" name="reset" class="reset-btn">Reset</button>
+
 		</div>
 		<div class="text-center">Already have an account? <a href="login.php">Sign in</a></div>
 	</form>

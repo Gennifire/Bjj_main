@@ -44,7 +44,8 @@ body {
 }
 
 button {
-	color: #fff;
+	color: #1c8abd;
+	background-color: #1c8adb;
 	width: 100%;
 	padding: 10px;
 	border-radius: 20px;
@@ -55,11 +56,6 @@ button {
 	cursor: pointer;
 }
 
-#signup-btn,
-#reset-btn {
-	background-color: #1c8adb;
-
-}
 
 #login-btn {
 	background-color: #21afde;

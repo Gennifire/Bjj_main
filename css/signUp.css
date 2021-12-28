@@ -16,7 +16,6 @@ body {
 
 }
 
-
 .sign-up-form {
 	width: 500px;
 	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
@@ -85,12 +84,4 @@ hr {
 
 img {
 	margin-top: -60px;
-}
-
-label {
-	text-align: left;
-}
-
-.btn btn-success {
-	background-color: #1c8adb;
 }

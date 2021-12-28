@@ -1,37 +1,23 @@
 <?php
 session_start();
-
-require_once "includes/connection.php";
-
-if(isset($_SESSION['user_id'])!="") {
-    header("Location: dashboard.php");
-}
-
-if (isset($_POST['login'])) {
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-
-    if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
-        $email_error = "Please Enter Valid Email ID";
-    }
-    if(strlen($password) < 6) {
-        $password_error = "Password must be minimum of 8 characters";
-    }  
-
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '" . $email. "' and pass = '" . md5($password). "'");
-   if(!empty($result)){
-        if ($row = mysqli_fetch_array($result)) {
-            $_SESSION['user_id'] = $row['uid'];
-            $_SESSION['user_name'] = $row['name'];
-            $_SESSION['user_email'] = $row['email'];
-            $_SESSION['user_mobile'] = $row['mobile'];
-            header("Location: dashboard.php");
-        } 
-    }else {
-        $error_message = "Incorrect Email or Password!!!";
-    }
+if (isset($_POST['save'])) {
+	extract($_POST);
+	include 'database.php';
+	$sql = mysqli_query($conn, "SELECT * FROM register where Email='$email' and Password='md5($pass)'");
+	$row  = mysqli_fetch_array($sql);
+	if (is_array($row)) {
+		$_SESSION["ID"] = $row['ID'];
+		$_SESSION["Email"] = $row['Email'];
+		$_SESSION["First_Name"] = $row['First_Name'];
+		$_SESSION["Last_Name"] = $row['Last_Name'];
+		header("Location: home.php");
+	} else {
+		echo "Invalid Email ID/Password";
+	}
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">

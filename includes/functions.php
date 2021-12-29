@@ -1,29 +1,29 @@
 <?php
-$con=mysqli_connect("localhost","root","","loginsystem");
-if(isset($_POST['login_submit'])){
-	$username=$_POST['username'];
+
+
+/*login */
+if(isset($_POST['login_user'])){
+	$username=$_POST['user'];
 	$password=$_POST['password'];
-	$query="select * from logintb where username='$username' and password='$password'";
+	$query="select * from tbluser where username='$username' and password='$password'";
 	$result=mysqli_query($con,$query);
-	if(mysqli_num_rows($result)==1)
-	{
-		header("Location:admin-panel.php");
 	
+	if(mysqli_num_rows($result)==1){
+		header("Location:admin-panel.php");
+	}
+	else {
+		echo "<script>alert('error login')</script>";
+		echo "<script>window.open('admin-panel.php','_self')</script>";
+	}
 }
-	else
-    {
-        echo "<script>alert('error login')</script>";
-        echo "<script>window.open('admin-panel.php','_self')</script>";
-    }
-    }
-if(isset($_POST['pat_submit']))
-{
-    $fname=$_POST['fname'];
-    $lname=$_POST['lname'];
+	
+/*register new user (user and admin)*/
+if(isset($_POST['pat_submit'])) {
+    $fname=$_POST['full_name'];
+	$DOB=$_POST['DOB'];
     $email=$_POST['email'];
     $contact=$_POST['contact'];
-    $docapp=$_POST['docapp'];
-    $query="insert into doctorapp(fname,lname,email,contact,docapp)values('$fname','$lname','$email','$contact','$docapp')";
+    $query="insert into (fname,lname,email,contact)values('$fname','$lname','$email','$contact')";
      $result=mysqli_query($con,$query);
     if($result)
     {
@@ -31,6 +31,8 @@ if(isset($_POST['pat_submit']))
         echo "<script>window.open('admin-panel.php','_self')</script>";
     }
     } 
+
+/*resgister new instuctor (admin only)*/
     if(isset($_POST['tra_submit']))
     {
         $Trainer_id=$_POST['Trainer_id'];
@@ -43,7 +45,9 @@ if(isset($_POST['pat_submit']))
           echo "<script>alert('Trainer added.')</script>";
             echo "<script>window.open('admin-panel.php','_self')</script>";
         }
-        } 
+      } 
+		
+/*make payment (user and admin)*/
         if(isset($_POST['pay_submit']))
         {
             $Payment_id=$_POST['Payment_id'];
@@ -60,42 +64,28 @@ if(isset($_POST['pat_submit']))
             }
             } 
 			
- function get_patient_details(){
-    global $con;
-    $query="select * from doctorapp";
-    $result=mysqli_query($con,$query);
-    while ($row=mysqli_fetch_array($result)){
-         $fname=$row ['fname'];
-    $lname=$row['lname'];
-    $email=$row['email'];
-    $contact=$row['contact'];
-    $docapp=$row['docapp'];
-      echo "<tr>
-          <td>$fname</td>
-        <td>$lname</td>
-            <td>$email</td>
-            <td>$contact</td>
-          <td>$docapp</td>
-        </tr>";
-    }
-}
+/*get membership type*/
 function get_package(){
     global $con;
-    $query="select * from Package";
+    $query="select * from membership_type";
     $result=mysqli_query($con,$query);
     while($row=mysqli_fetch_array($result)){
-        $Package_id=$row ['Package_id'];
-        $Package_name=$row['Package_name'];
-        $Amount=$row['Amount'];
+        $Package_id=$row ['membership_id'];
+        $Package_name=$row['membership_type_name'];
+		$Package_details=$row['membership_description'];
+        $Amount=$row['membership_amount'];
         echo"<tr>
-        <td>$Package_id</td>
-        <td>$Package_name</td>
-            <td>$Amount</td>
+			<td>$membership_id</td>
+			<td>$membership_type_name</td>
+			<td>$membership_description</td>
+            <td>$membership_amount</td>
             
         </tr>";
 
     }
 }
+
+/*search for trainer*/
 function get_trainer(){
     global $con;
     $query="select * from Trainer";
@@ -113,6 +103,8 @@ function get_trainer(){
 
     }
 }
+
+/*get and allow to make payments*/
 function get_payment(){
     global $con;
     $query="select * from Payment";

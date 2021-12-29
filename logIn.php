@@ -46,15 +46,16 @@
 
 <body>
 	<div id="errorDisplay"><?php echo $the_Error; ?></div>
+	
 	<div class="login-form">
 		<img src="pics/blueUser-modified.png" height="50px">
 		<h1>Log in Now</h1>
-		<form>
-			<form action="includes/logInBounce.php" class="login" name="loginForm" onsubmit="return validateLoginForm()" method="POST">
+		
+			<form action="includes/logInBounce.php" class="login" name="loginForm"  method="post">
 			
-				<input type="text" class="input-box" name="userEmail" id="userEmail" placeholder="Email" required>
+				<input type="text" class="input-box" name="userEmail" id="userEmail" placeholder="Email" required onchange="return validateLoginForm()">
 				<span id="user_emailError"></span>
-				<input type="password" class="input-box" name="logPassword" id="logPassword" placeholder="Password" required>
+				<input type="password" class="input-box" name="logPassword" id="logPassword" placeholder="Password" required placeholder="Email" required onchange="return validateLoginForm()">
 				<span id="user_passwordError"></span>
 				<div id="check">
 					<input type="checkbox" id="remember">
@@ -64,11 +65,8 @@
 				
 				<br><br>
 
-				<input class="input-box" id="login-btn" type="submit" value="Login">
+				<input class="input-box" id="login-btn" type="submit" value="Login" name="submit">
 				<a href="#">Forgot Password?</a>
-
-			</form>
-
 
 
 			<hr>

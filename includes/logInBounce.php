@@ -1,6 +1,5 @@
 <?php
 	
-
 	// CONNECT TO THE DATABASE FROM AN INCLUDE FILE
 	require_once('includes/connection.php');
 	

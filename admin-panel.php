@@ -2,7 +2,7 @@
 	session_start();
 
 	if (empty($_SESSION['login_user'])) {
-		header("Location: login1.php");
+		header("Location: logIn.php");
 		exit;
 	}
 ?>
@@ -13,11 +13,32 @@
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   </head>
+  
+  
+  <header>
+ <nav>
+     <div class="main-wrapper">
+	    <div class="nav-login">
+		   <?php
+				if (isset($_SESSION['login_user'])) 
+				  echo <form action="Logout.php" method="POST">
+						<button type="submit" name="submit">logout</button>
+						  </form>	
+				
+			?>
+							
+	   </div>
+	 </div>
+ </nav>
+
+</header>
+  
+  
   <body>
       
    
        
- <div class="jumbotron" style="border-radius:0;background:url('images/3.jpg');background-size:cover;height:400px;"></div>
+ 
    <div class="container-fluid">
     <div class="row">
         <div class="col-md-3">
@@ -30,34 +51,33 @@
             </div>
             <hr>
             <div class="list-group">
-              <a href="trainer.php" class="list-group-item active">Trainer</a>
-              <a href="trainer.php" class="list-group-item active">Trainer details</a>             
-              <a href="trainer.php" class="list-group-item active">Add new Trainer</a>
+              <a href="instructor.php" class="list-group-item active">Trainer Dashboard</a>
             </div>      
             
         </div>
+		
+		
             <div class="col-md-8">
-            <div class="card">
-                
-     <div class="card-body" style="background-color:#3498DB;color:FFFFFF;">
+		<div class="card">                
+			<div class="card-body" style="background-color:#3498DB;color:FFFFFF;">
                 <h3>Register new members</h3>
-                </div> 
-                <div class="card-body"></div>
-                <form class="form-group" action="func.php" method="post">
+            </div> 
+                
+                <form class="form-group" action="includes/functions.php" method="post">
                 <label>first name:</label>
-					<input type="text" name="fname" class="form-control"><br>
+					<input type="text" name="full_name" class="form-control"><br>
 					
                  <label>last name:</label>
-					<input type="text" name="lname" class="form-control"><br> 
+					<input type="text" name="DOB" class="form-control"><br> 
 					
-				<label>email</label>
+				<label>email:</label>
                     <input type="text" name="email" class="form-control"><br>
 					
                 <label>Member ID</label>
 				<input type="text" name="contact" class="form-control"><br>
 				
-				<label>Trainer </label> 
-					<select class="form-control" name="docapp">
+				<label>Trainer ID </label> 
+					<select class="form-control" name="instructor">
 
             <?php while($row1 = mysqli_fetch_array($result1)):;?>
 
@@ -75,36 +95,9 @@
       </div>
       </div>
       </div>
-      <div class="col-md-1"></div>
+      <!--<div class="col-md-1"></div>-->
       </div>
-    <header>
- <nav>
-     <div class="main-wrapper">
-	      
-		       <div class="nav-login">
-			       <?php
-				        if (isset($_SESSION['u_id'])) {
-						  echo '<form action="includes/index.php" method="POST">
-					            <button type="submit" name="submit">logout</button>
-					              </form>';	
-                                 } else{
-							
-							echo '<form action="includes/index.php" method="POST">
-                              
-                               						
-				                </form>
-				              <a href="index.php" class="btn btn-light" style="background-color:#3498DB;color:FFFFFF">Logout</a>';
-							
-						}
-				   
-				    ?>
-					
-				
-		       </div>
-	 </div>
- </nav>
-
-</header>
+    
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 

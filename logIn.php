@@ -50,7 +50,7 @@
 		<img src="pics/blueUser-modified.png" height="50px">
 		<h1>Log in Now</h1>
 		<form>
-			<form action="logInBounce.php" class="login" name="loginForm" onsubmit="return validateLoginForm()" method="POST">
+			<form action="includes/logInBounce.php" class="login" name="loginForm" onsubmit="return validateLoginForm()" method="POST">
 			
 				<input type="text" class="input-box" name="userEmail" id="userEmail" placeholder="Email" required>
 				<span id="user_emailError"></span>

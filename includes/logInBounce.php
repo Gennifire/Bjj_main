@@ -1,7 +1,5 @@
 <?php
-	// Note that this webpage has no HTML: its purpose is to validate whether the username/password account exists.
-		// if account DOES    exist, go to one of the "successful" pages;
-		// if account DOESN'T exist, bounce back to login1.php
+	
 
 	// CONNECT TO THE DATABASE FROM AN INCLUDE FILE
 	require_once('includes/connection.php');
@@ -9,16 +7,16 @@
 	// this variable will be set to 1 if either the username or password is incorrect. We initialise it at 0
 	$baddata = 0;
 	
-	// data from the previous (login1.php) page
+	
 	$username = $_POST['userEmail'];
 	$password = $_POST['logPassword'];
 
-	//HASH the password 100 times so that it can be compared to other hashed passwords in the DB table
-		// VITALLY IMPORTANT that the Loop is run the SAME number of times for both SignIn and SignUp
+	/*important to keep sign up and sign in hash loops the exact same*/
 	for ($i=1 ; $i<=100 ; $i++) {
 		$password = hash('sha512' , $password);
 	}
-	// check if username exists in the database table (same sort of code as Semester 1)
+	
+	// check if username exists in the database
 	$query = "SELECT * FROM tbluser WHERE email = :userEmail AND password = :logPassword";
 	$statement = $db->prepare($query);
 	$statement->bindValue(":username", $username);
@@ -32,17 +30,14 @@
 	$arrayLength = count($all_queries);
 	
 	
-	// Does USERNAME exist? 
-		// This will also catch multiple accounts with same username (if DB had been hacked and extra accounts inserted)
-		// When we INSERT a new account (i.e. when someone signs up), we need to check that the user is not there
-			// (in that case we would have: if ($arrayLength==0) { INSERT etc...}
+	
 	if ($arrayLength != 1) {
 		// INVALID USERNAME or USERNAME
 		$baddata = 1;
-	// MEMBER EXISTS: valid USERNAME AND PASSWORD
+		
+	// If member exists: valid USERNAME AND PASSWORD
 	} else {
-		// using foreach even though there is only one record, but that's ok! 
-		// ($dbPassword will only be written once: one loop)
+		
 		foreach ($all_queries as $one_query) : 
 			$dbUserStatus = $one_query['user_status'];
 		endforeach; 

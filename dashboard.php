@@ -23,9 +23,9 @@
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">Welcome <?php echo $_SESSION['Full_name']?></h5>
-                    <p class="card-text">Your Current Email: <?php echo $_SESSION['email']?></p>
-                    <p class="card-text">Your Current Mobile: <?php echo $_SESSION['contact']?></p>
-					<p class="card-text">Your Current Password (hashed): <?php echo $_SESSION['password']?></p>
+						<p class="card-text">Your Current Email: <?php echo $_SESSION['email']?></p>
+						<p class="card-text">Your Current Mobile: <?php echo $_SESSION['contact']?></p>
+						<p class="card-text">Your Current Password (hashed): <?php echo $_SESSION['password']?></p>
                     <a href="logout.php" class="btn btn-primary">Logout</a>
                   </div>
                 </div>

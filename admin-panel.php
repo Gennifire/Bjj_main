@@ -45,15 +45,19 @@
                 <div class="card-body"></div>
                 <form class="form-group" action="func.php" method="post">
                 <label>first name:</label>
-<input type="text" name="fname" class="form-control"><br>
-                    <label>last name:</label>
-<input type="text" name="lname" class="form-control"><br> 
- <label>email</label>
+					<input type="text" name="fname" class="form-control"><br>
+					
+                 <label>last name:</label>
+					<input type="text" name="lname" class="form-control"><br> 
+					
+				<label>email</label>
                     <input type="text" name="email" class="form-control"><br>
-                    <label>Member ID</label>
-<input type="text" name="contact" class="form-control"><br>        
- <label>Trainer </label> 
- <select class="form-control" name="docapp">
+					
+                <label>Member ID</label>
+				<input type="text" name="contact" class="form-control"><br>
+				
+				<label>Trainer </label> 
+					<select class="form-control" name="docapp">
 
             <?php while($row1 = mysqli_fetch_array($result1)):;?>
 
@@ -64,13 +68,13 @@
         </select>
         <br>
                                         
-  <input type="submit" class="btn btn-primary" name="pat_submit" value="Register">                  <a href="func.php" class="btn btn-light"></a>
+			<input type="submit" class="btn btn-primary" name="pat_submit" value="Register">                  <a href="func.php" class="btn btn-light"></a>
                     
                     
-                </form>
-                </div>
+      </form>
       </div>
-       </div>
+      </div>
+      </div>
       <div class="col-md-1"></div>
       </div>
     <header>

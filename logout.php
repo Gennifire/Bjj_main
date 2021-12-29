@@ -1,14 +1,7 @@
 <?php
-ob_start();
-session_start();
-if(isset($_SESSION['user_id'])) {
+	session_start();
 	session_destroy();
-	unset($_SESSION['user_login_id']);
-	unset($_SESSION['user_name']);
-	unset($_SESSION['user_email']);
-	unset($_SESSION['user_mobile']);
-	header("Location: login.php");
-} else {
-	header("Location: login.php");
-}
+
+	// go back to the login1.php page, using JAVASCRIPT
+	echo("<script>window.location.replace('logIn.php');</script>");  // redirects  
 ?>

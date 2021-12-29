@@ -1,20 +1,25 @@
 <?php
-session_start();
-if (isset($_POST['save'])) {
-	extract($_POST);
-	include 'database.php';
-	$sql = mysqli_query($conn, "SELECT * FROM register where Email='$email' and Password='md5($pass)'");
-	$row  = mysqli_fetch_array($sql);
-	if (is_array($row)) {
-		$_SESSION["ID"] = $row['ID'];
-		$_SESSION["Email"] = $row['Email'];
-		$_SESSION["First_Name"] = $row['First_Name'];
-		$_SESSION["Last_Name"] = $row['Last_Name'];
-		header("Location: home.php");
-	} else {
-		echo "Invalid Email ID/Password";
+	// NEED TO SET VARIABLES FIRST TIME PAGE LOADS (i.e. submit button not pressed yet)
+	//                       ==========
+		// isset(): checks if something was SET, in this case: was the submit button below the password field pressed
+		// in this case we want to check if it WASN'T pressed/clicked/set, for FIRST-TIME load of this webpage
+	if (isset($_POST['submit'])== NULL) {
+		// first time this webpage loads, we shouldn't have an error message (see first <div> inside the <body>)
+		$the_Error = '';
+		
+		// this variable will be set to 1 if either an invalid username or password was entered
+		$baddata = 2;
 	}
-}
+
+	// NOT THE FIRST TIME THE PAGE LOADS ... SO must be BOUNCED BACK from INVALID LOGIN ATTEMPT
+		// (if not the first time to load, then the submit button would already have been pressed, so we wouldn't have gone into the previous if)
+	// ==================
+	if ($baddata==1) {
+		$the_Error = 'Either the username or password is incorrect';
+	}
+	// NEVER NEVER tell the user that "the password is incorrect" or "the username is incorrect" 
+	// because you are also telling them that the OTHER one is correct: 
+	// KEEP THE ERROR MESSAGE AS VAGUE AS POSSIBLE: TELL HACKERS NOTHING!
 ?>
 
 
@@ -40,21 +45,23 @@ if (isset($_POST['save'])) {
 	?>
 
 <body>
-
+	<div id="errorDisplay"><?php echo $the_Error; ?></div>
 	<div class="login-form">
 		<img src="pics/blueUser-modified.png" height="50px">
 		<h1>Log in Now</h1>
 		<form>
-			<form class="login" name="loginForm" onsubmit="return validateLoginForm()" method="POST">
-				<input type="text" class="input-box" name="name" id="logName" placeholder="Username">
-				<input type="password" class="input-box" name="password" id="logPassword" placeholder="Password">
+			<form action="logInBounce.php" class="login" name="loginForm" onsubmit="return validateLoginForm()" method="POST">
+			
+				<input type="text" class="input-box" name="userEmail" id="userEmail" placeholder="Email" required>
+				<span id="user_emailError"></span>
+				<input type="password" class="input-box" name="logPassword" id="logPassword" placeholder="Password" required>
+				<span id="user_passwordError"></span>
 				<div id="check">
 					<input type="checkbox" id="remember">
 					<label for="remember">Remember me</label>
 				</div>
 
-				<div id="errorMsg"></div>
-
+				
 				<br><br>
 
 				<input class="input-box" id="login-btn" type="submit" value="Login">

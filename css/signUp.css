@@ -44,7 +44,7 @@ body {
 }
 
 button {
-	color: #1c8abd;
+	color: #fff;
 	background-color: #1c8adb;
 	width: 100%;
 	padding: 10px;
@@ -54,6 +54,11 @@ button {
 	border: none;
 	outline: none;
 	cursor: pointer;
+}
+
+button:hover{
+	color: #1c8adb;
+	background-color: #fff;
 }
 
 

@@ -1,7 +1,21 @@
 <?php
 
 include("includes/connection.php");
+
+
+	// NEED TO SET VARIABLES FIRST TIME PAGE LOADS (i.e. submit button not pressed yet)
+	//                       ==========
+	if (isset($_POST['submit'])==NULL) {
+		$show_Error = '';
+		$baddata = 2;
+	}
+
+	// NOT THE FIRST TIME THE PAGE LOADS ... SO must be BOUNCED BACK from INVALID SIGNUP ATTEMPT
+	if ($baddata==1) {
+		$show_Error = 'This account already exists: try again';
+	}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,23 +37,17 @@ include("includes/connection.php");
 <body>
 
 	<!-- Sign up form -->
-
+	<div id="errorDisplay"><?php echo $show_Error; ?></div>
 	<?php include("includes/signUpForm.php") ?>
 
 	<br> <br>
 
-	<hr>
-	<p class="or-seperator"><b>OR</b></p>
-	<p>Already Have an account?</p>
-	<a href="logIn.php">
-
-		<u>Login</u>
-	</a>
+	
 	</form>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script rel="stylesheet" href="js/logInSignUp.js"></script>
+	<script src="js/logInSignUp.js"></script>
 </body>
 
 </html>

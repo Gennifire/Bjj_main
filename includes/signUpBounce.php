@@ -4,7 +4,7 @@
 		// if account DOESN'T exist (GOOD!), insert a record and go to login1.php
 
 	// CONNECT TO THE DATABASE FROM AN INCLUDE FILE
-	require('includes/connection.php');
+	require('connection.php');
 	
 	// this variable will be set to 1 if either the username or password is incorrect. We initialise it at 0
 	$baddata = 0;
@@ -53,12 +53,12 @@
 		$statement->closeCursor();		
 		
 		// go to login1.php so this newly signed-up user can login/signin
-		echo("<script>window.location.replace('logIn.php');</script>");  // redirects  			
+		echo("<script>window.location.replace('../logIn.php');</script>");  // redirects  			
 	}	
 	
 
 	// if unsuccessful, back to signup1.php, but still URL shows signup2_insert.php
 	if ($baddata == 1) {
-		include ("signUp.php");
+		include ("../signUp.php");
 	}
 ?>

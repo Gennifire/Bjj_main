@@ -1,7 +1,7 @@
 <?php
 	
 	// CONNECT TO THE DATABASE FROM AN INCLUDE FILE
-	require_once('includes/connection.php');
+	require_once('connection.php');
 	
 	// this variable will be set to 1 if either the username or password is incorrect. We initialise it at 0
 	$baddata = 0;
@@ -20,6 +20,7 @@
 	$statement = $db->prepare($query);
 	$statement->bindValue(":username", $username);
 	$statement->bindValue(":password", $password);
+	
 	$statement->execute();			
 	$all_queries = $statement->fetchAll();			
 	$statement->closeCursor();	
@@ -48,20 +49,20 @@
 		// go to a particular webpage depending on the status of the account (show user in URL, from Session file):
 		// if ADMIN user
 		if ($dbUserStatus == 1) {
-			header("Location: admin-panel.php?user=" . $_SESSION['login_user'] . "ADMINISTRATION");
+			header("Location: ../admin-panel.php?user=" . $_SESSION['login_user'] . "ADMINISTRATION");
 		// if ORDINARY user
 		} else if ($dbUserStatus == 0) {
-			header("Location: dashboard.php?user=" . $_SESSION['login_user'] . "ORDINARY");
+			header("Location: ../dashboard.php?user=" . $_SESSION['login_user'] . "ORDINARY");
 		// if STATUS UNDEFINED user
 		} else {
-			header("Location: dashboard.php?user=" . $_SESSION['login_user'] . "STATUS UNDEFINED");
+			header("Location: ../dashboard.php?user=" . $_SESSION['login_user'] . "STATUS UNDEFINED");
 		}
 		exit; // exit login2.php if successful (login2.php is now NOT in the URL. Whatever is inside header() is)
 	}
 
 	
 	if ($baddata == 1) {
-		include ("logIn.php");
+		include ("../logIn.php");
 		//exit;
 	}
 	

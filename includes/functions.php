@@ -1,10 +1,10 @@
 <?php
 
-
+include("includes/connection.php");
 /*login */
-if(isset($_POST['login_user'])){
-	$username=$_POST['user'];
-	$password=$_POST['password'];
+/*if(isset($_POST['login_user'])){
+	$username=$_POST['userEmail'];
+	$password=$_POST['logPassword'];
 	$query="select * from tbluser where username='$username' and password='$password'";
 	$result=mysqli_query($con,$query);
 	
@@ -15,15 +15,30 @@ if(isset($_POST['login_user'])){
 		echo "<script>alert('error login')</script>";
 		echo "<script>window.open('admin-panel.php','_self')</script>";
 	}
-}
+}*/
 	
 /*register new user (user and admin)*/
-if(isset($_POST['pat_submit'])) {
+if(isset($_POST['userSubmit'])) {
     $fname=$_POST['full_name'];
 	$DOB=$_POST['DOB'];
     $email=$_POST['email'];
     $contact=$_POST['contact'];
-    $query="insert into (fname,lname,email,contact)values('$fname','$lname','$email','$contact')";
+	$address=$_POST['address']
+	
+    $query="INSERT INTO tbluser (
+		Full_name,
+		Date_of_birth,
+		email,
+		Contact,
+		address
+	)
+		VALUES(
+		'$fname',
+		'$lname',
+		'$email',
+		'$contact'
+		'$address'
+		)";
      $result=mysqli_query($con,$query);
     if($result)
     {
@@ -32,17 +47,19 @@ if(isset($_POST['pat_submit'])) {
     }
     } 
 
+
 /*resgister new instuctor (admin only)*/
     if(isset($_POST['tra_submit']))
     {
-        $Trainer_id=$_POST['Trainer_id'];
-        $Name=$_POST['Name'];
+       
+        $Name=$_POST['instructor_name'];
         $phone=$_POST['phone'];
-        $query="insert into Trainer(Trainer_id,Name,phone)values('$Trainer_id','$Name','$phone')";
+		$email=$_POST['email'] 
+        $query="insert into tbleinstructor(instructor_name,instructor_phone, instructor_email)values('$Name','$phone')";
          $result=mysqli_query($con,$query);
         if($result)
         {
-          echo "<script>alert('Trainer added.')</script>";
+          echo "<script>alert('Instructor added.')</script>";
             echo "<script>window.open('admin-panel.php','_self')</script>";
         }
       } 

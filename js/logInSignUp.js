@@ -64,7 +64,7 @@ function emailValidation()
 }
 
 
-//older code snippets//
+
 
 /*passwords confirm / match*/
 function checkPassword() {
@@ -100,6 +100,8 @@ function checkPassword() {
                 }
             }
 			
+			
+//older code snippets//
 
 /*$(window).on("hashchange", function () {
     if (location.hash.slice(1) == "signup") {

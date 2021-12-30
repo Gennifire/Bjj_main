@@ -47,7 +47,7 @@
             </div>
             <hr>
             <div class="list-group">
-              <a href="instructor.php" class="list-group-item active">Trainer Dashboard</a>
+              <a href="instructor.php" class="list-group-item active">Instructor Dashboard</a>
             </div>      
             
         </div>

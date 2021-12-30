@@ -44,7 +44,16 @@
 		$baddata = 1;
 	} else {
 		// USERNAME DOESN'T EXIST SO INSERT RECORD
-        $query2 = "INSERT INTO tbluser (email, password, user_status) VALUES (:signupUsername, :signupPassword, '2')";
+        $query2 = "INSERT INTO tbluser (
+						email, 
+						password, 
+						user_status) 
+						
+					VALUES (
+						:signupUsername, 
+						:signupPassword, 
+						'1'
+						)";
 
 		$statement = $db->prepare($query2);
 		$statement->bindValue(':signupUsername', $signupUsername);

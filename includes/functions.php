@@ -5,7 +5,14 @@ include("includes/connection.php");
 /*if(isset($_POST['login_user'])){
 	$username=$_POST['userEmail'];
 	$password=$_POST['logPassword'];
-	$query="select * from tbluser where username='$username' and password='$password'";
+	$query="SELECT * 
+			FROM 
+				tbluser 
+			WHERE
+				email = :username 
+			AND 
+				password = :password";
+				
 	$result=mysqli_query($con,$query);
 	
 	if(mysqli_num_rows($result)==1){

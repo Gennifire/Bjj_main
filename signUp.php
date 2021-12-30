@@ -38,6 +38,7 @@ include("includes/connection.php");
 
 	<!-- Sign up form -->
 	<div id="errorDisplay"><?php echo $show_Error; ?></div>
+	
 	<?php include("includes/signUpForm.php") ?>
 
 	<br> <br>

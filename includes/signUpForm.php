@@ -4,22 +4,22 @@
 
 	<img src="pics/blueUser-modified.png" height="50px">
 	<h1>Sign Up Now</h1>
-	<form action="includes/signUpBounce.php" method="post" enctype="multipart/form-data" onSubmit="validateSignupForm()">
+	<form action="signUpBounce.php" method="post" >
 		<p class="hint-text">Create your account</p>
 		<div class="form-group">
 			
 		<div class="form-group">
-			<input type="email" class="input-box" name="email" id="email" placeholder="Email" required onChange="return emailValidation()">
+			<input type="email" class="input-box" name="user_email" id="email" placeholder="Email" required onChange="return emailValidation()">
 			<span id="email-error"></span>
 		</div>
 		
 		<div class="form-group">
-			<input type="password" class="input-box" name="pass" id="pass" placeholder="Password" required min="8">
+			<input type="password" class="input-box" name="user_pass" id="pass" placeholder="Password" required min="8">
 			<span id="PasserrorMsg"></span>
 		</div>
 		
 		<div class="form-group">
-			<input type="password" class="input-box" name="cpass" id="cpass" placeholder="Confirm Password" required min="8" onchange="return checkPassword()">
+			<input type="password" class="input-box" name="user_cpass" id="cpass" placeholder="Confirm Password" required min="8" onchange="return checkPassword()">
 			<span id="CpasserrorMsg"></span>
 		</div>
 
@@ -28,8 +28,8 @@
 		</div>
 		
 		<div class="form-group">
-			<button type="submit" name="save" class="signup-btn">Register Now</button>
-			<button type="reset" name="reset" class="reset-btn">Reset</button>
+			<input type="submit" name="submit" class="signup-btn" value="Register Now">
+			<input type="reset" name="reset" class="reset-btn" value="reset">
 		</div>
 		<hr>
 		<div class="text-center">Already have an account? <a href="logIn.php">Sign in</a></div>

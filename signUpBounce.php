@@ -4,14 +4,14 @@
 		// if account DOESN'T exist (GOOD!), insert a record and go to login1.php
 
 	// CONNECT TO THE DATABASE FROM AN INCLUDE FILE
-	require('connection.php');
+	require('includes/connection.php');
 	
 	// this variable will be set to 1 if either the username or password is incorrect. We initialise it at 0
 	$baddata = 0;
 	
 	// data from the previous (signup1.php) page
-	$signupUsername = $_POST['email'];
-	$signupPassword = $_POST['cpass'];
+	$signupUsername = $_POST['user_email'];
+	$signupPassword = $_POST['user_cpass'];
 	
 	echo "<script>alert('Password='" . $signupPassword . ");</script>";
 	
@@ -22,7 +22,14 @@
 	echo "<script>alert('Hashed password='" . $signupPassword . ");</script>";
 
 	// check if username exists in the database table
-	$query1 = "SELECT * FROM tbluser WHERE email = :signupUsername AND password = :signupPassword";
+	$query1 = "SELECT * 
+				FROM 
+					tbluser 
+				WHERE 
+					email = :signupUsername 
+				AND 
+					password = :signupPassword";
+					
 	$statement = $db->prepare($query1);
 	$statement->bindValue(":signupUsername", $signupUsername);
 	$statement->bindValue(":signupPassword", $signupPassword);
@@ -42,6 +49,7 @@
 	if ($arrayLength != 0) {
 		// USERNAME ALREADY EXISTS: PROBLEM
 		$baddata = 1;
+		
 	} else {
 		// USERNAME DOESN'T EXIST SO INSERT RECORD
         $query2 = "INSERT INTO tbluser (
@@ -62,12 +70,12 @@
 		$statement->closeCursor();		
 		
 		// go to login1.php so this newly signed-up user can login/signin
-		echo("<script>window.location.replace('../logIn.php');</script>");  // redirects  			
+		echo("<script>window.location.replace('logIn.php');</script>");  // redirects  			
 	}	
 	
 
 	// if unsuccessful, back to signup1.php, but still URL shows signup2_insert.php
 	if ($baddata == 1) {
-		include ("../signUp.php");
+		include ("signUp.php");
 	}
 ?>

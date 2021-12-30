@@ -1,8 +1,8 @@
 <?php
 
-include("includes/connection.php");
+//include("includes/connection.php");
 /*login */
-/*if(isset($_POST['login_user'])){
+if(isset($_POST['login_user'])){
 	$username=$_POST['userEmail'];
 	$password=$_POST['logPassword'];
 	$query="SELECT * 
@@ -15,17 +15,32 @@ include("includes/connection.php");
 				
 	$result=mysqli_query($con,$query);
 	
-	if(mysqli_num_rows($result)==1){
+	foreach ($all_queries as $one_query) : 
+			$dbUserStatus = $one_query['user_status'];
+		endforeach; 
+	
+	if(mysqli_num_rows($result) == 1){
+		
 		header("Location:admin-panel.php");
 	}
 	else {
-		echo "<script>alert('error login')</script>";
-		echo "<script>window.open('admin-panel.php','_self')</script>";
+		header("Location:dashboard.php");
 	}
-}*/
+	
+	session_start();
+	
+	$_SESSION['login_user'] = $username;
+	
+	exit();
+}
+
+
+
+          
+         
 	
 /*register new user (user and admin)*/
-if(isset($_POST['userSubmit'])) {
+/*if(isset($_POST['userSubmit'])) {
     $fname=$_POST['full_name'];
 	$DOB=$_POST['DOB'];
     $email=$_POST['email'];
@@ -40,23 +55,24 @@ if(isset($_POST['userSubmit'])) {
 		address
 	)
 		VALUES(
-		'$fname',
-		'$lname',
-		'$email',
-		'$contact'
-		'$address'
+		:fname,
+		:DOB,
+		:email,
+		:contact'
+		:address'
 		)";
+		
      $result=mysqli_query($con,$query);
     if($result)
     {
       echo "<script>alert('Member added.')</script>";
         echo "<script>window.open('admin-panel.php','_self')</script>";
     }
-    } 
+    } */
 
 
 /*resgister new instuctor (admin only)*/
-    if(isset($_POST['tra_submit']))
+ /*   if(isset($_POST['tra_submit']))
     {
        
         $Name=$_POST['instructor_name'];
@@ -69,10 +85,10 @@ if(isset($_POST['userSubmit'])) {
           echo "<script>alert('Instructor added.')</script>";
             echo "<script>window.open('admin-panel.php','_self')</script>";
         }
-      } 
+      } */
 		
 /*make payment (user and admin)*/
-        if(isset($_POST['pay_submit']))
+  /*      if(isset($_POST['pay_submit']))
         {
             $Payment_id=$_POST['Payment_id'];
             $Amount=$_POST['Amount'];
@@ -87,9 +103,9 @@ if(isset($_POST['userSubmit'])) {
                 echo "<script>window.open('admin-panel.php','_self')</script>";
             }
             } 
-			
+			*/
 /*get membership type*/
-function get_package(){
+/*function get_package(){
     global $con;
     $query="select * from membership_type";
     $result=mysqli_query($con,$query);
@@ -110,7 +126,7 @@ function get_package(){
 }
 
 /*search for trainer*/
-function get_trainer(){
+/*function get_trainer(){
     global $con;
     $query="select * from Trainer";
     $result=mysqli_query($con,$query);
@@ -126,10 +142,10 @@ function get_trainer(){
         </tr>";
 
     }
-}
+}*/
 
 /*get and allow to make payments*/
-function get_payment(){
+/*function get_payment(){
     global $con;
     $query="select * from Payment";
     $result=mysqli_query($con,$query);
@@ -140,7 +156,7 @@ function get_payment(){
         $customer_id=$row['customer_id'];
         /*$customer_name=$row['customer_name'];*/
         
-        echo"<tr>
+ /*       echo"<tr>
         <td>$Payment_id</td>
         <td>$Amount</td>
         <td>$payment_type</td>
@@ -150,7 +166,7 @@ function get_payment(){
 
     }
 }
-
+*/
 
 ?>
 

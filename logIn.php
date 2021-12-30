@@ -43,8 +43,7 @@
 	?>
 
 <body>
-	
-	
+		
 	<div class="login-form">
 		<img src="pics/blueUser-modified.png" height="50px">
 		<h1>Log in Now</h1>

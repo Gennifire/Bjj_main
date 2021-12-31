@@ -18,6 +18,9 @@ to do:
 -learn delete x
 
 -create sign up and sign in x
+ -sign up keeps allowing duplicate entries
+ -sign in won't let you in, even with correct results.
+ -counts database queries as empty or not there
 
 -dashboard after sign in with ability to edit or remove character. 
 

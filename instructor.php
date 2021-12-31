@@ -37,7 +37,7 @@ include("includes/connection.php");
 			</tr>   
         </thead>
 			<tbody>
-				<?php get_trainer(); ?>
+				
 			</tbody>
     </table>
 		<div class="card-body" style="background-color:#3498DB;color:FFFFFF;">
@@ -47,14 +47,43 @@ include("includes/connection.php");
       <div class="card-body"></div>
             <form class="form-group" action="functions.php" method="post">
                 <label>Trainer ID</label>
-					<input type="text" name="instructor_id" class="form-control"><br>
+					<select id="selectexp" name="selectexp" required>
+							<option value="">Select expertise.</option>
+
+							<?php
+							$query = "SELECT 
+											instructor_expertise_type
+										FROM 
+											tblinstructor_expertise
+										ORDER BY 
+											tblinstructor_expertise_type ASC"; //initalises query2 to all records from customer
+
+							$statement = $db->prepare($query); //links query to connected database with $statement
+							$statement->execute(); //executes the query on the database
+							$all_queries = $statement->fetchAll(); //fetches "all records" stores them in an array call "all_queries2.
+							$statement->closeCursor(); //releases memory used by "$statement" so it can be used again.
+
+							$howManyRecords1 = 0; //keeps tabs of the amount of records
+
+							foreach ($all_queries as $one_query) : //loops through and gives option for each product id and product name
+								echo "<option value='"
+									. $one_query['instructor_expertise_id'] . "'>"
+									. $one_query['instructor_expertise_type'] .
+									"</option>";
+							endforeach;
+							?>
+						</select>
 					
-					<label>Name</label>
-						<input type="text" name="Name" class="form-control"><br>
+					<input type="text" name="instructor_name" class="form-control"><br>
+					
+					<label>Instructor Name</label>
+						<input type="text" name="instructor_ame" id="instructor_name" class="form-control"><br>
+						
+						<input type="text" name="instructor_email" id="instrctor_email" class="form-control"> <br>
 					
                     <label>Phone</label>
-						<input type="text" name="phone" class="form-control"><br> 
-						<input type="submit" class="btn btn-primary" name="trainer_submit" value="Register">
+						<input type="text" name="instructor_phone" id="instructor_phone" class="form-control"><br> 
+						<input type="submit" class="btn btn-primary" name="instructor_submit" value="Register">
 			</form>
      </div>
     </div>

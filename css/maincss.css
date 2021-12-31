@@ -126,12 +126,12 @@ body,
 	margin: 25px 0;
 	font-size: 0.9em;
 	min-width:450px;	
-	border-radius: 5px 5px 0 0;
+	border-radius: 25px 25px 0 0;
 	overflow: hidden;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.content-table thead {
+.content-table thead tr {
 	background-color: #40c4ff;
 	color: #fff;	
 	text-align: left;
@@ -140,29 +140,30 @@ body,
 
 .content-table th,
 .content-table td {
-	padding: 10px 13px;
+	padding: 20px 8px;
 
 }
 
-.content-table tbody tr {
+.content-table tr td {
 	border-bottom: 1px solid #dddddd;
 }
 
-.content-table tbody tr:hover {
+.content-table tr:hover {
 	background-color: #40c4ff;
 	color: #fff;	
 }
 
-.content-table tbody tr:nth-of-type(even):hover {
+.content-table tr:nth-of-type(even):hover {
 	background-color: #40c4ff;
 	color: #fff;	
 }
 
-.content-table tbody tr:nth-of-type(even) {
+.content-table tr td:nth-of-type(even) {
 	background-color: #e8ffff;
+	color: #40c4ff;
 }
 
-.content-table tbody tr:last-of-type {
+.content-table tr td:last-of-type {
 	border-bottom: 4px solid #00987;
 	
 } 

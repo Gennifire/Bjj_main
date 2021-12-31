@@ -81,7 +81,7 @@
 								
 							</thead>
 							
-							<tbody>"
+							"
 							;
 
 			$howManyRecords2 = 0;
@@ -106,7 +106,7 @@
 				$howManyRecords2++;
 			endforeach;
 
-			echo "</tbody></table>";
+			echo "</table>";
 
 			if ($howManyRecords2 == 1) {
 				echo "<p class='postGrid'>There is "

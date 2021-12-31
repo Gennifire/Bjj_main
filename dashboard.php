@@ -1,6 +1,4 @@
-<?php
-$theMember = $_POST["search"];
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -16,9 +16,21 @@ to do:
 
 -dashboard for sign in with ability to edit or remove character.
 
--membership buy.
 
-happens after sign up so we already have details.
+-admin update user
+-admin delete user
+-admin create user
+-admin create instructor
+-admin update instructor
+-admin delete instructor
+
+-user signup
+-user login
+-user membership buy.
+-user update user
+-user delete user
+-user schedule class
+
 make mock receipt/timetable.
 
 -Logout

@@ -1,5 +1,5 @@
 <?php 
-include("includes/functions.php");
+//include("includes/functions.php");
 include("includes/connection.php");
 ?>
 
@@ -45,9 +45,9 @@ include("includes/connection.php");
 		</div> 
 	 
       <div class="card-body"></div>
-            <form class="form-group" action="includes/functions.php" method="post">
+            <form class="form-group" action="functions.php" method="post">
                 <label>Trainer ID</label>
-					<input type="text" name="Trainer_id" class="form-control"><br>
+					<input type="text" name="instructor_id" class="form-control"><br>
 					
 					<label>Name</label>
 						<input type="text" name="Name" class="form-control"><br>

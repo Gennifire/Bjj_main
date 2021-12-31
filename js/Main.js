@@ -1,3 +1,5 @@
+/*Slide so start*/
+
 let sliderImages = document.querySelectorAll('.slide'),
     arrowLeft = document.querySelector('#arrow-left'),
     arrowRight = document.querySelector('#arrow-right'),
@@ -47,3 +49,5 @@ arrowRight.addEventListener('click', function(){
 });
 
 startSlide();
+
+/*SlideShow end*/

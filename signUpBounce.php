@@ -1,5 +1,6 @@
 <?php
-	// Note that this webpage has no HTML: its purpose is to validate whether the username/password account exists.
+
+// Note that this webpage has no HTML: its purpose is to validate whether the username/password account exists.
 		// if account ALREADY exists (BAD!), bounce back to signup1.php to display error message;
 		// if account DOESN'T exist (GOOD!), insert a record and go to login1.php
 

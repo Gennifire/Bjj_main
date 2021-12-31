@@ -1,10 +1,6 @@
 <?php
-	session_start();
-
-	if (empty($_SESSION['login_user'])) {
-		header("Location: logIn.php");
-		exit;
-	}
+// CONNECT TO THE DATABASE FROM AN INCLUDE FILE
+require_once('includes/connection.php');
 ?>
 
 <!DOCTYPE html>
@@ -56,54 +52,47 @@
       <div class="col-md-8">
 		<div class="card">                
 			<div class="card-body" style="background-color:#3498DB;color:FFFFFF;">
-                <h3>Register new members</h3>
+                <h3>Edit Customer Details</h3>
             </div> 
-                
-                <form class="form-group" action="functions.php" method="post">
-                <label>full name:</label>
-					<input type="text" name="full_name" class="form-control"><br>
-					
-                 <label>Date of birth</label>
-					<input type="date" name="DOB" class="form-control"><br> 
-					
-				<label>Email:</label>
-                    <input type="text" name="email" class="form-control"><br>
-					
-                <label>Phone</label>
-				<input type="text" name="contact" class="form-control"><br>
-				
-				<label>Address line 1 </label> 
-					<input type="text" class="form-control" name="address">
-				
-				
-				<label> County </label>
-					<select class="form-control" name="county">
-					
-					</select>
-				
-				<label> Country </label>
-					<select class="form-control" name="country">
-					
-					</select>
-				
-				<!-- change user from ordinary to admin etc-->
-				<label> User Status </label>
-					<select class="form-control" name="status">
-						<option id="admin"> 1 </option>
-						<option id="member"> 2 </option>
-					</select>
+			
+			<!--Below is my form-->
+                <form action="admin-reg1.php" method="post">
+               <label>Pick a customer:</label>
+						<select id="selectUser" name="selectUser" required>
+							<option value="">....Pick a customer....</option>
+
+							<?php
+							$query = "SELECT 
+											users_id, 
+											Full_name, 
+											user_email
+										FROM 
+											tbluser 
+										ORDER BY 
+											Full_name ASC"; //initalises query2 to all records from customer
+
+							$statement = $db->prepare($query); //links query to connected database with $statement
+							$statement->execute(); //executes the query on the database
+							$all_queries = $statement->fetchAll(); //fetches "all records" stores them in an array call "all_queries2.
+							$statement->closeCursor(); //releases memory used by "$statement" so it can be used again.
+
+							$howManyRecords1 = 0; //keeps tabs of the amount of records
+
+							foreach ($all_queries as $one_query) : //loops through and gives option for each product id and product name
+								echo "<option value='"
+									. $one_query['users_id'] . "'>"
+									. $one_query['Full_name'] . ", "
+									. $one_query['user_email'] .
+									"</option>";
+							endforeach;
+							?>
+						</select>
 						
-				
+						<br><br>
+						<input type="reset" value="Reset the List">
+						<br><br>
+						<input type="submit" name="submit" value="update this customers data">
 
-           
-
-        </select>
-        <br>
-                                        
-			<input type="submit" class="btn btn-primary" name="userSubmit" value="Register">                  <a href="func.php" class="btn btn-light"></a>
-                    
-                    
-      </form>
       </div>
       </div>
       </div>

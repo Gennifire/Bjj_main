@@ -11,7 +11,7 @@
 	$password = $_POST['logPassword'];
 
 	/*important to keep sign up and sign in hash loops the exact same*/
-	for ($i=1 ; $i<=100 ; $i++) {
+	for ($i=1; $i<=100; $i++) {
 		$password = hash('sha512' , $password);
 	}
 	
@@ -21,9 +21,9 @@
 			 FROM 
 				tbluser 
 			 WHERE 
-				email = :username 
+				user_email = :username 
 			 AND 
-				password = :password";
+				user_password = :password";
 				
 	$statement = $db->prepare($query);
 	$statement->bindValue(":username", $username);
@@ -36,6 +36,9 @@
 	// HOW MANY ARRAY ELEMENTS ARE THERE?
 		// (there should be one here because each username SHOULD BE UNIQUE)
 	$arrayLength = count($all_queries);
+	echo ("<script>alert('number of records: " . $arrayLength . ".');</script>");
+	
+	
 	
 	
 	

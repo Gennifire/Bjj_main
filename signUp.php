@@ -11,7 +11,7 @@ include("includes/connection.php");
 	}
 
 	// NOT THE FIRST TIME THE PAGE LOADS ... SO must be BOUNCED BACK from INVALID SIGNUP ATTEMPT
-	if ($baddata==1) {
+	if ($baddata == 1) {
 		$show_Error = 'This account already exists: try again';
 	}
 ?>
@@ -31,20 +31,63 @@ include("includes/connection.php");
 
 	<link rel="stylesheet" href="css/maincss.css">
 	<link rel="stylesheet" href="css/signUp.css">
+	
+</head>
 
-	<?php include("includes/topNav.php"); ?>
+	
+	
+	
 
 <body>
-
+<?php include("includes/topNav.php"); ?>
 	<!-- Sign up form -->
-	<div id="errorDisplay"><?php echo $show_Error; ?></div>
 	
-	<?php include("includes/signUpForm.php") ?>
+	
+	
+	
+	<div class="sign-up-form">
+
+
+	<img src="pics/blueUser-modified.png" height="50px">
+	<h1>Sign Up Now</h1>
+	<form action="signUpBounce.php" method="post" >
+		<p class="hint-text">Create your account</p>
+		
+		<div id="errorDisplay"><?php echo $show_Error; ?></div>
+		
+		
+			
+		<div class="form-group">
+			<input type="email" class="input-box" name="user_email" id="user_email" placeholder="Email" required onChange="return emailValidation()">
+			<span id="email-error"></span>
+		</div>
+		
+		<div class="form-group">
+			<input type="password" class="input-box" name="user_pass" id="user_pass" placeholder="Password" required min="8">
+			<span id="PasserrorMsg"></span>
+		</div>
+		
+		<div class="form-group">
+			<input type="password" class="input-box" name="user_cpass" id="user_cpass" placeholder="Confirm Password" required min="8" onchange="return checkPassword()">
+			<span id="CpasserrorMsg"></span>
+		</div>
+
+		<div class="form-group">
+			<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> & <a href="#">Privacy Policy</a></label>
+		</div>
+		
+		<div class="form-group">
+			<input type="submit" name="submit" class="signup-btn" value="Register Now">
+			<input type="reset" name="reset" class="reset-btn" value="Reset">
+		</div>
+		<hr>
+		<div class="text-center">Already have an account? <a href="logIn.php">Sign in</a></div>
+	</form>
+
 
 	<br> <br>
 
 	
-	</form>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

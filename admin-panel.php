@@ -59,7 +59,7 @@
                 <h3>Register new members</h3>
             </div> 
                 
-                <form class="form-group" action="includes/functions.php" method="post">
+                <form class="form-group" action="functions.php" method="post">
                 <label>full name:</label>
 					<input type="text" name="full_name" class="form-control"><br>
 					
@@ -95,11 +95,7 @@
 						
 				
 
-            <?php while($row1 = mysqli_fetch_array($result1)):;?>
-
-            <option value="<?php echo $row1[0];?>"><?php echo $row1[1];?></option>
-
-            <?php endwhile;?>
+           
 
         </select>
         <br>

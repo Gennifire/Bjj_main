@@ -17,9 +17,9 @@ function validateLoginForm() {
 
 /* Sign up for validation */
 function validateSignupForm() {
-    var mail = document.getElementById("email").value;
-    var checkpass = document.getElementById("pass").value;
-    var password = document.getElementById("cpass").value;
+    var mail = document.getElementById("user_email").value;
+    var checkpass = document.getElementById("user_pass").value;
+    var password = document.getElementById("user_cpass").value;
 
     if (mail == "" || checkpass == "" || password == "") {
         document.getElementById("email-error").innerHTML = "Please fill the required fields"
@@ -46,7 +46,7 @@ function emailValidation()
 	if input empty email invalid
   */
   
-  value = document.getElementById('email').value;
+  value = document.getElementById('user_email').value;
   apos=value.indexOf("@"); 
   dotpos=value.lastIndexOf(".");
   lastpos=value.length-1;
@@ -68,8 +68,8 @@ function emailValidation()
 
 /*passwords confirm / match*/
 function checkPassword() {
-                password = document.getElementById("pass").value;
-                cpassword = document.getElementById("cpass").value;
+                password = document.getElementById("user_pass").value;
+                cpassword = document.getElementById("user_cpass").value;
   
                 // If password not entered
                 if (password.length == 0){
@@ -95,7 +95,8 @@ function checkPassword() {
                 // If same return True.
                 else{
                     document.getElementById("CpasserrorMsg").innerHTML = " &#10003; ";
-					document.getElementById("CpasserrorMsg").style.backgroundColor = "lightgreen";					
+					document.getElementById("CpasserrorMsg").style.backgroundColor = "lightgreen";	
+					//document.getElementById("submit").disabled = false;
                     return true;
                 }
             }

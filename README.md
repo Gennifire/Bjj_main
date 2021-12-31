@@ -12,10 +12,14 @@ footer
 
 to do:
 
--create sign up and sign in
+-learn selecet o
+-learn insert o
+-learn update o
+-learn delete x
 
--dashboard for sign in with ability to edit or remove character.
+-create sign up and sign in x
 
+-dashboard after sign in with ability to edit or remove character. 
 
 -admin update user
 -admin delete user
@@ -32,6 +36,7 @@ to do:
 -user schedule class
 
 make mock receipt/timetable.
+
 
 -Logout
 

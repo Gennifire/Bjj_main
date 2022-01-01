@@ -78,4 +78,3 @@
 	if ($baddata == 1) {
 		include ("signUp.php");
 	}
-?>

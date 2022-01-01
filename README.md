@@ -12,14 +12,34 @@ footer
 
 to do:
 
--create sign up and sign in
+-learn selecet o
+-learn insert o
+-learn update o
+-learn delete x
 
--dashboard for sign in with ability to edit or remove character.
+-create sign up and sign in x
+ -sign up keeps allowing duplicate entries
+ -sign in won't let you in, even with correct results.
+ -counts database queries as empty or not there
 
--membership buy.
+-dashboard after sign in with ability to edit or remove character. 
 
-happens after sign up so we already have details.
+-admin update user
+-admin delete user
+-admin create user
+-admin create instructor
+-admin update instructor
+-admin delete instructor
+
+-user signup
+-user login
+-user membership buy.
+-user update user
+-user delete user
+-user schedule class
+
 make mock receipt/timetable.
+
 
 -Logout
 

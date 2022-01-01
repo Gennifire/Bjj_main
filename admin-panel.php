@@ -58,7 +58,7 @@ require_once('includes/connection.php');
 			<!--Below is my form-->
                 <form action="admin-reg1.php" method="post">
                <label>Pick a customer:</label>
-						<select id="selectUser" name="selectUser" required>
+						<select class="form-control" id="selectUser" name="selectUser" required>
 							<option value="">....Pick a customer....</option>
 
 							<?php
@@ -89,9 +89,9 @@ require_once('includes/connection.php');
 						</select>
 						
 						<br><br>
-						<input type="reset" value="Reset the List">
+						<input type="reset" class="form-control" value="Reset the List">
 						<br><br>
-						<input type="submit" name="submit" value="update this customers data">
+						<input type="submit" class="form-control" name="submit" value="update this customers data">
 
       </div>
       </div>

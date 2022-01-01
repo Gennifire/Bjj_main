@@ -19,7 +19,7 @@ include("includes/connection.php");
              <div class="col-md-1">
 				<a href="admin-panel.php" class="btn btn-light ">Go Back</a>
              </div>
-             <div class="col-md-3"><h3> Instructor Information</h3></div>
+             <div class="col-md-3"><h3> Instructor details</h3></div>
              <div class="col-md-8">
          
 		 </div>
@@ -30,33 +30,30 @@ include("includes/connection.php");
     <table class="table table-hover">
         <thead>
 			<tr>
-				<th>Instructor ID</th>
-				<th>Name:</th>
-				<th>Phone:</th>
-         
+				<th>Add New Instructor</th>
+				        
 			</tr>   
         </thead>
 			<tbody>
 				
 			</tbody>
     </table>
-		<div class="card-body" style="background-color:#3498DB;color:FFFFFF;">
-                <h3>Register new Trainer</h3>
-		</div> 
+		
 	 
       <div class="card-body"></div>
-            <form class="form-group" action="functions.php" method="post">
-                <label>Trainer ID</label>
-					<select id="selectexp" name="selectexp" required>
-							<option value="">Select expertise.</option>
+            <form class="form-group" action="instructor-reg1.php" method="post">
+                <label>Instructor Expertise:</label>
+					<select class="form-control" id="instructor_expertise_id" name="instructor_expertise_id" required>
+							<option class="form-control" value="">Select Expertise</option>
 
 							<?php
 							$query = "SELECT 
+											instructor_expertise_id,  
 											instructor_expertise_type
 										FROM 
-											tblinstructor_expertise
+											tblinstructor_expertise 
 										ORDER BY 
-											tblinstructor_expertise_type ASC"; //initalises query2 to all records from customer
+											instructor_expertise_type ASC"; //initalises query2 to all records from customer
 
 							$statement = $db->prepare($query); //links query to connected database with $statement
 							$statement->execute(); //executes the query on the database
@@ -66,19 +63,18 @@ include("includes/connection.php");
 							$howManyRecords1 = 0; //keeps tabs of the amount of records
 
 							foreach ($all_queries as $one_query) : //loops through and gives option for each product id and product name
-								echo "<option value='"
+								echo "<option class='form-control' value='"
 									. $one_query['instructor_expertise_id'] . "'>"
 									. $one_query['instructor_expertise_type'] .
 									"</option>";
 							endforeach;
 							?>
-						</select>
+						</select> <br>
 					
-					<input type="text" name="instructor_name" class="form-control"><br>
 					
 					<label>Instructor Name</label>
-						<input type="text" name="instructor_ame" id="instructor_name" class="form-control"><br>
-						
+						<input type="text" name="instructor_name" id="instructor_name" class="form-control"><br>
+					<label>Instructor Email </label>
 						<input type="text" name="instructor_email" id="instrctor_email" class="form-control"> <br>
 					
                     <label>Phone</label>

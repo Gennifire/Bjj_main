@@ -103,11 +103,11 @@ $userToBeUpdated = $_POST["selectUser"];
 						<?php echo $userDetails['Address']; ?>"> <br><br>
 						
 						<label>County:</label>
-						<input type="text" id="county_id" name="county_id" class="form-control"  value="
+						<input type="text" id="county_id" name="county_id" class="form-control"  readonly value="
 						<?php echo $userDetails['county_id']; ?>"> <br><br>
 						
 						<label>Country</label>
-						<input type="text" id="country_id" name="country_id" class="form-control"  value="
+						<input type="text" id="country_id" name="country_id" class="form-control" readonly value="
 						<?php echo $userDetails['country_id']; ?>"> <br><br>
 						
 						<label>When did Customer join:</label>
@@ -117,6 +117,12 @@ $userToBeUpdated = $_POST["selectUser"];
 						<input type="reset" class="form-control" value="Reset the form">
 						<br><br>
 						<input type="submit" class="form-control" value="update customer record">
+						<br><br>
+					<!--Add warning here !!-->
+						<form action="delete.php" class="form-control"  method="post">
+							<input type="submit" class="form-control" value="Delete User">
+						</form>
+					
 					</form>	
 		
               

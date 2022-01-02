@@ -16,7 +16,7 @@ $query = "UPDATE tbleinstructor SET
 			instructor_phone = :instructor_phone
 		
 		WHERE 
-			instructor_id=:instructor_id
+			instructor_id = :instructor_id
 		
 		INNER JOIN 
 			tblinstructor_expertise

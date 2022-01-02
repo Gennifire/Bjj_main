@@ -25,19 +25,7 @@ include("includes/connection.php");
 		 </div>
 		 </div>
 		 </div>
-     <div class="card-body" style="background-color:#3498DB;color:#ffffff;">
-         <div class="card-body">
-    <table class="table table-hover">
-        <thead>
-			<tr>
-				<th>Add New Instructor</th>
-				        
-			</tr>   
-        </thead>
-			<tbody>
-				
-			</tbody>
-    </table>
+    
 		
 	 
       <div class="card-body"></div>

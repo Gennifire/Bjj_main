@@ -4,6 +4,8 @@ Beginning of learning php and Sql on own website
 
 created common files to separate out repetitive sections.
 
+$db connection
+
 topnav
 
 sidenav
@@ -12,10 +14,10 @@ footer
 
 to do:
 
--learn selecet o
+-learn selcet o
 -learn insert o
 -learn update o
--learn delete x
+-learn delete o
 
 -create sign up and sign in x
  -sign up keeps allowing duplicate entries
@@ -24,23 +26,22 @@ to do:
 
 -dashboard after sign in with ability to edit or remove character. 
 
--admin update user
--admin delete user
--admin create user
--admin create instructor
--admin update instructor
--admin delete instructor
+-admin update user o
+-admin delete user o
+-admin create user x
+-admin create instructor o
+-admin update instructor x
+-admin delete instructor x
 
 -user signup
 -user login
 -user membership buy.
--user update user
+-user update user 
 -user delete user
 -user schedule class
 
-make mock receipt/timetable.
+-make mock receipt/timetable.
 
-
--Logout
+-Logout (have reusable function)
 
 -timetable

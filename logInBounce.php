@@ -63,11 +63,6 @@
 			header("Location: admin-panel.php?user=" . 
 					$_SESSION['login_user'] .  
 					"ADMINISTRATION");
-		// if ORDINARY user
-		} else if ($dbUserStatus == 0) {
-			header("Location: dashboard.php?user=" . 
-					$_SESSION['login_user'] . 
-					"ORDINARY");
 		// if STATUS UNDEFINED user
 		} else {
 			header("Location: admin-panel.php?user=" . 

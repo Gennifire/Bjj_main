@@ -14,7 +14,7 @@
      <div class="card-body" style="background-color:#3498DB;color:#ffffff;">
          <div class="row">
              <div class="col-md-1">
-				<a href="admin-panel.php" class="btn btn-light ">Go Back</a>
+				<input type="button" value="Back" onclick="window.history.back()" /> 
              </div>
 			 
              <div class="col-md-3"><h3>Members Details</h3></div>

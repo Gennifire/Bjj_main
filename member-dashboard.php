@@ -18,11 +18,9 @@ $theMember = $_POST["login_user"];
 		
      <div class="main-wrapper">
 	    <div class="nav-login">
-		   
-		 <form action="Logout.php" method="POST">
-			<button type="submit" name="submit">logout</button>
-		</form>	
-					
+		
+			<a href="logout.php" class="btn btn-primary">Logout</a>
+			
 	   </div>
 	 </div>
  </nav>
@@ -31,86 +29,109 @@ $theMember = $_POST["login_user"];
 
 <body>
  
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Welcome <?php echo $_SESSION['Full_name']?></h5>
-						<?php
-			$query = "SELECT *	FROM tbluser WHERE users_id"; //initalises query to 1 records from customer
-			$statement = $db->prepare($query); //links query to connected database with $statement
-			$statement->bindValue("theMember", $theMember); //binds this value to the customer
-			$statement->execute(); //executes the query on the database
-			$all_queries = $statement->fetchAll(); //fetches "all records" stores them in an array call "all_queries2.
-			$statement->closeCursor(); //releases memory used by "$statement" so it can be used again.
-
-			$howManyRecords = 0;
-
-			//table for displaying customers in 
-			//could be used for displaying info on users own page
-			//could be used for displaying a single customer to admin
-			echo "<table id='filteredProductDetails' border='1'>";
-
-			foreach ($all_queries as $one_query) :
-				echo "<tr><td class='description topRow'><b> User ID:</b></td>
-					  	<td class='description topRow'> <b>" . $one_query['users_id'] . "</b>
-					  	</td></tr>";
-
-				echo "<tr><td class='description'><b> Email Address: </b></td>
-						<td class='description topRow'> <b>" . $one_query['user_email'] . "</b>
-						</td></tr>";
-
-				echo "<tr><td class='description'><b> Password: </b></td>
-					 <td class='description topRow'> <b>" . $one_query['user_password'] . "</b>
-					 </td></tr>";
-
-				echo "<tr><td class='description'><b> Status: </b></td>
-					 <td class='description topRow'> <b>" . $one_query['user_status'] . "</b>
-					 </td></tr>";
-
-				echo "<tr><td class='description'><b> First name: </b></td>
-					 <td class='description topRow'> <b>" . $one_query['Full_name'] . "</b>
-					 </td></tr>";
-
-
-				echo "<tr><td class='description'><b> Address: </b></td>
-					 <td class='description topRow'> <b>" . $one_query['Address'] . "</b>
-					 </td></tr>";
-
-				
-				echo "<tr><td class='description'><b> County </b></td>
-					 <td class='description topRow'> <b>" . $one_query['county_id'] . "</b>
-					 </td></tr>";
-
-				echo "<tr><td class='description'><b> Country </b></td>
-					 <td class='description topRow'> <b>" . $one_query['country_id'] . "</b>
-					 </td></tr>";
-
-				echo "<tr><td class='description'><b>Join Date: </b></td>
-					 <td class='description topRow'> <b>" . $one_query['join_date'] . "</b>
-					 </td></tr>";
-
-				$howManyRecords++;
-			endforeach;
-
-			echo "</table>";
-
-			if ($howManyRecords == 1) {
-				echo "<p class='postGrid'>There is " . $howManyRecords . " record in this table.</>";
-			} else {
-				echo "<p class='postGrid'>There are " . $howManyRecords . " records in this table.</>";
-			}
-
-
-
-			?>
-                    <a href="logout.php" class="btn btn-primary">Logout</a>
-                  </div>
-                </div>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="" class="list-group-item active"
+                   >Members</a>
+                <a href="member_details.php" class="list-group-item">Member details</a>
+                <a href="package.php" class="list-group-item">Package details</a>
+                <a href="payment.php" class="list-group-item">Payments</a>
             </div>
-        </div>       
-    </div>
+            <hr>
+                      
+        </div>
+		
+		
+      <div class="col-md-8">
+		<div class="card">                
+			<div class="card-body" style="background-color:#3498DB;color:FFFFFF;">
+                <h3>Edit Member details</h3>
+            </div> 
+			
+			<?php 
+						$query = "SELECT * FROM tbluser WHERE users_id = :theMember";
+						$statement = $db->prepare($query);
+						$statement->bindValue(":theMember", $theMember);
+						$statement->execute();
+						$userDetails = $statement->fetch();
+						$statement->closeCursor();						
+					?>
+
+					<form action="admin-reg.php" class="form-control"  method="post">
+
+
+						<label>User ID:</label>
+						<input type="text" id="users_id" name="users_id" class="form-control" value="
+						<?php echo $userDetails['users_id']; ?>"> <br><br>
+						
+						<label>Name:</label>
+						<input type="text" name="Full_name" id="Full_name" class="form-control" value="
+						<?php echo $userDetails['Full_name']; ?>"> <br><br>
+						
+						<label>Date of Birth </label>
+						<input type="date" id="Date_of_birth" name="Date_of_birth" class="form-control" readonly value="
+						<?php echo $userDetails['Date_of_birth']; ?>"> <br><br>
+						
+						<label>Email</label>
+						<input type="text" id="user_email" name="user_email" class="form-control" value="
+						<?php echo $userDetails['user_email']; ?>"> <br><br>
+						
+						<label>Password:</label>
+						<input type="text" id="user_password" name="user_password" class="form-control" value="
+						<?php echo $userDetails['user_password']; ?>"> <br><br>
+						
+						<label>User Status:</label>
+						<input type="text" id="user_status" name="user_status" class="form-control" value="
+						<?php echo $userDetails['user_status']; ?>"> <br><br>
+												
+						
+						<label>Contact:</label>
+						<input type="text" id="Contact" name="Contact" class="form-control" value="
+						<?php echo $userDetails['Contact']; ?>"> <br><br>
+						
+						<label>Address</label>
+						<input type="text" id="Address" name="Address" class="form-control" value="
+						<?php echo $userDetails['Address']; ?>"> <br><br>
+						
+						<label>County:</label>
+						<input type="text" id="county_id" name="county_id" class="form-control" value="
+						<?php echo $userDetails['county_id']; ?>"> <br><br>
+						
+						<label>Country</label>
+						<input type="text" id="country_id" name="country_id" class="form-control" value="
+						<?php echo $userDetails['country_id']; ?>"> <br><br>
+						
+						<label>When did Customer join:</label>
+						<input type="date" id="join_date" name="join_date" class="form-control" readonly value="
+						<?php echo $userDetails['join_date']; ?>"> <br><br>
+						
+						<input type="reset" class="form-control" value="Reset the form">
+						<br><br>
+						<input type="submit" class="form-control" value="update customer record">
+						<br><br>
+					<!--Add warning here !!-->
+						<form action="delete.php" class="form-control"  method="post">
+							<input type="submit" class="form-control" value="Delete User">
+						</form>
+					
+					</form>	
+		
+              
+       
+                    
+      </div>
+      </div>
+      </div>
+      <!--<div class="col-md-1"></div>-->
+      </div>
+    
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+	
+	
 
 </body>
 </html>

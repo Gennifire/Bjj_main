@@ -20,9 +20,7 @@ $userToBeUpdated = $_POST["selectUser"];
      <div class="main-wrapper">
 	    <div class="nav-login">
 		   
-		 <form action="Logout.php" method="POST">
-			<button type="submit" name="submit">logout</button>
-		</form>	
+		 <a href="logout.php" class="btn btn-primary">Logout</a>	
 					
 	   </div>
 	 </div>

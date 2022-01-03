@@ -1,11 +1,10 @@
 <?php
 
-include("includes/connection.php");
 
 
 	// NEED TO SET VARIABLES FIRST TIME PAGE LOADS (i.e. submit button not pressed yet)
 	//                       ==========
-	if (isset($_POST['submit'])==NULL) {
+	if (isset($_POST['submit']) == NULL) {
 		$show_Error = '';
 		$baddata = 2;
 	}
@@ -55,8 +54,7 @@ include("includes/connection.php");
 		
 		<div id="errorDisplay"><?php echo $show_Error; ?></div>
 		
-		
-			
+					
 		<div class="form-group">
 			<input type="email" class="input-box" name="user_email" id="user_email" placeholder="Email" required onChange="return emailValidation()">
 			<span id="email-error"></span>

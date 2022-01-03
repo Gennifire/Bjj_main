@@ -39,8 +39,6 @@ $all_queries1 = $statement->fetchAll();
 $statement->closeCursor();
 
 
-
-
 // HOW MANY ARRAY ELEMENTS ARE THERE?
 // (there should be NONE here before SignUp because each username SHOULD BE UNIQUE)
 $arrayLength = count($all_queries1);

@@ -17,10 +17,7 @@ require_once('includes/connection.php');
 		
      <div class="main-wrapper">
 	    <div class="nav-login">
-		   
-		 <form action="Logout.php" method="POST">
-			<button type="submit" name="submit">logout</button>
-		</form>	
+		<a href="logout.php" class="btn btn-primary">Logout</a>
 					
 	   </div>
 	 </div>
@@ -54,14 +51,14 @@ require_once('includes/connection.php');
       <div class="col-md-8">
 		<div class="card">                
 			<div class="card-body" style="background-color:#3498DB;color:FFFFFF;">
-                <h3>Edit Customer Details</h3>
+                <h3>Edit Member Details</h3>
             </div> 
 			
 			<!--Below is my form-->
                 <form action="admin-reg1.php" method="post">
-               <label>Pick a customer:</label>
+               <label>Pick a Member:</label>
 						<select class="form-control" id="selectUser" name="selectUser" required>
-							<option value="">....Pick a customer....</option>
+							<option value="">Pick a Member:</option>
 
 							<?php
 							$query = "SELECT 

@@ -64,10 +64,10 @@ include("includes/connection.php");
 						<input type="text" name="instructor_name" id="instructor_name" class="form-control"><br>
 					<label>Instructor Email </label>
 						<input type="text" name="instructor_email" id="instrctor_email" class="form-control"> <br>
-					
                     <label>Phone</label>
 						<input type="text" name="instructor_phone" id="instructor_phone" class="form-control"><br> 
-						<input type="submit" class="btn btn-primary" name="instructor_submit" value="Register">
+						
+						<input type="submit" class="btn btn-primary form-control" name="instructor_submit" value="Register">
 			</form>
      </div>
     </div>

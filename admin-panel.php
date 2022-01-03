@@ -43,8 +43,10 @@ require_once('includes/connection.php');
             </div>
             <hr>
             <div class="list-group">
-              <a href="instructor.php" class="list-group-item active">Instructor Dashboard</a>
-            </div>      
+              <a href="" class="list-group-item active">Instructor</a>
+			  <a href="instructor-details.php" class="list-group-item">Instructor List</a>
+			  <a href="instructor.php" class="list-group-item">Add New Instructor</a>
+            </div>    
             
         </div>
 		
@@ -69,11 +71,11 @@ require_once('includes/connection.php');
 										FROM 
 											tbluser 
 										ORDER BY 
-											Full_name ASC"; //initalises query2 to all records from customer
+											Full_name ASC"; //initalises query to all records from customer
 
 							$statement = $db->prepare($query); //links query to connected database with $statement
 							$statement->execute(); //executes the query on the database
-							$all_queries = $statement->fetchAll(); //fetches "all records" stores them in an array call "all_queries2.
+							$all_queries = $statement->fetchAll(); //fetches "all records" stores them in an array call "all_queries.
 							$statement->closeCursor(); //releases memory used by "$statement" so it can be used again.
 
 							$howManyRecords1 = 0; //keeps tabs of the amount of records
@@ -91,7 +93,7 @@ require_once('includes/connection.php');
 						<br><br>
 						<input type="reset" class="form-control" value="Reset the List">
 						<br><br>
-						<input type="submit" class="form-control" name="submit" value="update this customers data">
+						<input type="submit" class="form-control" name="submit" value="Update customer data">
 
       </div>
       </div>

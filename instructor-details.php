@@ -21,14 +21,14 @@
              <div class="col-md-8">
 			 
 
-				<form class="form-group" action="dashboard.php" method="post">
+				<form class="form-group" action="" method="post">
 					<div class="row">
 						<div class="col-md-10"><input type="text" name="search" id="search" class="form-control" placeholder="enter contact">
 						</div>
 						
 						<!--search for current member-->
 						<div class="col-md-2">
-							<input type="submit" name="member_search_submit" class="btn btn-light" value="Search"> 
+							<input type="submit" name="instructor_search_submit" class="btn btn-light" value="Search"> 
 						</div>
 					</div>           
                  </form>
@@ -56,10 +56,12 @@
 			<?php
 			$query2 = "SELECT 
 									* 
-								from 
+								FROM 
 									tbleinstructor 
-								ORDER BY 
-									instructor_id ASC"; //initalises query2 to all records from customer
+								LEFT JOIN
+									tblinstructor_expertise
+								ON 
+									tbleinstructor.instructor_expertise_id = tblinstructor_expertise.instructor_expertise_type"; //initalises query2 to all records from instructor
 
 			$statement = $db->prepare($query2); //links query to connected database with $statement
 			$statement->execute(); //executes the query on the database

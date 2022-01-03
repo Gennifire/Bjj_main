@@ -15,22 +15,23 @@ $country_id = $_POST["country_id"];
 $join_date = $_POST["join_date"];
 
 
-$query = "UPDATE tbluser SET
-		users_id = :users_id,
-		user_email = :user_email,
-		user_password = :user_password,
-		user_status = :user_status,
-		Contact = :Contact,
-		Full_name = :Full_name,
-		Date_of_birth = :Date_of_birth,
-		Date_of_birth = :Date_of_birth,
-		Address = :Address,
-		county_id = :county_id,
-		country_id = :country_id,
-		join_date = :join_date		
+$query = "UPDATE tbluser 
+			SET
+				users_id = :users_id,
+				user_email = :user_email,
+				user_password = :user_password,
+				user_status = :user_status,
+				Contact = :Contact,
+				Full_name = :Full_name,
+				Date_of_birth = :Date_of_birth,
+				Date_of_birth = :Date_of_birth,
+				Address = :Address,
+				county_id = :county_id,
+				country_id = :country_id,
+				join_date = :join_date		
 		
-		WHERE 
-		users_id=:users_id";
+			WHERE 
+				users_id=:users_id";
 		
 $statement = $db->prepare($query);
 

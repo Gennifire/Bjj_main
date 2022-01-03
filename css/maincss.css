@@ -153,19 +153,15 @@ body,
 	color: #fff;	
 }
 
-.content-table tr:nth-of-type(even):hover {
-	background-color: #40c4ff;
-	color: #fff;	
-}
 
-.content-table tr td:nth-of-type(even) {
+/*.content-table tr:nth-of-type(even) {
 	background-color: #e8ffff;
 	color: #40c4ff;
-}
+}*/
 
 .content-table tr td:last-of-type {
 	border-bottom: 4px solid #00987;
-	
+
 } 
 
 /*table end*/

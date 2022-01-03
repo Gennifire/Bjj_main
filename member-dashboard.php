@@ -1,4 +1,9 @@
+<?php
+// CONNECT TO THE DATABASE FROM AN INCLUDE FILE
+require_once('includes/connection.php');
 
+$theMember = $_POST["login_user"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +11,24 @@
     <title>User Info Dashboard</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
+<header>
+ <nav>
+	<h4>Welcome, <span class="userEmail"><?php echo $_SESSION['login_user'] ?></span>! You have successfully signed in as ADMINISTRATOR</h4>
+		
+     <div class="main-wrapper">
+	    <div class="nav-login">
+		   
+		 <form action="Logout.php" method="POST">
+			<button type="submit" name="submit">logout</button>
+		</form>	
+					
+	   </div>
+	 </div>
+ </nav>
+
+</header>
+
 <body>
  
     <div class="container">
@@ -15,9 +38,9 @@
                   <div class="card-body">
                     <h5 class="card-title">Welcome <?php echo $_SESSION['Full_name']?></h5>
 						<?php
-			$query = "SELECT *	FROM tbluser WHERE user_email = :theMember"; //initalises query to 1 records from customer
+			$query = "SELECT *	FROM tbluser WHERE users_id"; //initalises query to 1 records from customer
 			$statement = $db->prepare($query); //links query to connected database with $statement
-			$statement->bindValue("theCustomer", $theCustomer); //binds this value to the customer
+			$statement->bindValue("theMember", $theMember); //binds this value to the customer
 			$statement->execute(); //executes the query on the database
 			$all_queries = $statement->fetchAll(); //fetches "all records" stores them in an array call "all_queries2.
 			$statement->closeCursor(); //releases memory used by "$statement" so it can be used again.

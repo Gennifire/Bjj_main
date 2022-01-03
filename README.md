@@ -26,13 +26,17 @@ to do:
 
 -dashboard after sign in with ability to edit or remove character. 
 
+xxx
 -admin update user o
 -admin delete user o
 -admin create user x
+
+xxx
 -admin create instructor o
 -admin update instructor x
 -admin delete instructor x
 
+xxx
 -user signup
 -user login
 -user membership buy.
@@ -40,8 +44,11 @@ to do:
 -user delete user
 -user schedule class
 
+xxx
 -make mock receipt/timetable.
 
--Logout (have reusable function)
+xxx
+-Logout (have reusable function) o
 
--timetable
+xxx
+-timetable 

@@ -54,9 +54,10 @@ require_once('includes/connection.php');
                 <h3>Edit Member Details</h3>
             </div> 
 			
-			<!--Below is my form-->
+			
                 <form action="admin-reg1.php" method="post">
                <label>Pick a Member:</label>
+			   <!--Make the member searchable in future-->
 						<select class="form-control" id="selectUser" name="selectUser" required>
 							<option value="">Pick a Member:</option>
 

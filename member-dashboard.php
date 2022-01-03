@@ -36,7 +36,7 @@ $theMember = $_POST["login_user"];
                 <a href="" class="list-group-item active"
                    >Members</a>
                 <a href="member_details.php" class="list-group-item">Member details</a>
-                <a href="package.php" class="list-group-item">Package details</a>
+                <a href="membership-reg.php" class="list-group-item">Package details</a>
                 <a href="payment.php" class="list-group-item">Payments</a>
             </div>
             <hr>

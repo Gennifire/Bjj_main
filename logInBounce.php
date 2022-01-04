@@ -62,7 +62,7 @@
 		if ($dbUserStatus == 1) {
 			header("Location: admin-panel.php?user=" . 
 					$_SESSION['login_user'] .  
-					"ADMINISTRATION");
+					"Admin");
 		// if STATUS UNDEFINED user
 		} else {
 			header("Location: member-dashboard.php?user=" . 

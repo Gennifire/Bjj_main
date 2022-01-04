@@ -2,6 +2,12 @@
 // CONNECT TO THE DATABASE FROM AN INCLUDE FILE
 require_once('includes/connection.php');
 
+session_start();
+
+	if (empty($_SESSION['login_user'])) {
+		header("Location: logIn.php");
+		exit;
+	}
 
 ?>
 
@@ -20,7 +26,7 @@ require_once('includes/connection.php');
      <div class="main-wrapper">
 	    <div class="nav-login">
 		<a href="logout.php" class="btn btn-primary">Logout</a>
-					
+		<br><br>			
 	   </div>
 	 </div>
  </nav>

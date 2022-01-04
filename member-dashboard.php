@@ -1,8 +1,12 @@
 <?php
 // CONNECT TO THE DATABASE FROM AN INCLUDE FILE
 require_once('includes/connection.php');
+session_start();
 
-$theMember = $_POST["login_user"];
+	if (empty($_SESSION['login_user'])) {
+		header("Location: logIn.php");
+		exit;
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +18,13 @@ $theMember = $_POST["login_user"];
 
 <header>
  <nav>
-	<h4>Welcome, <span class="userEmail"><?php echo $_SESSION['login_user'] ?></span>! You have successfully signed in as ADMINISTRATOR</h4>
+	<h4>Welcome, <span class="userEmail"><?php echo $_SESSION['login_user'] ?></span>! You have successfully signed in as a Member</h4>
 		
      <div class="main-wrapper">
 	    <div class="nav-login">
 		
 			<a href="logout.php" class="btn btn-primary">Logout</a>
+			<br><br>
 			
 	   </div>
 	 </div>
@@ -51,15 +56,15 @@ $theMember = $_POST["login_user"];
             </div> 
 			
 			<?php 
-						$query = "SELECT * FROM tbluser WHERE users_id = :theMember";
+						$query = "SELECT * FROM tbluser WHERE users_id = :login_user";
 						$statement = $db->prepare($query);
-						$statement->bindValue(":theMember", $theMember);
+						$statement->bindValue(":login_user", $login_user);
 						$statement->execute();
 						$userDetails = $statement->fetch();
 						$statement->closeCursor();						
 					?>
 
-					<form action="admin-reg.php" class="form-control"  method="post">
+					<form action="member-reg-bounce.php" class="form-control"  method="post">
 
 
 						<label>User ID:</label>

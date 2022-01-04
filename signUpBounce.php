@@ -47,7 +47,7 @@ $arrayLength = count($all_queries1);
 echo ("<script>alert('number of records: " . $arrayLength . ".');</script>");
 
 // Does USERNAME exist? When we INSERT a new account (i.e. when someone signs up), we need to check that the user is not there
-if ($arrayLength != 0) {
+if ($arrayLength >= 1) {
 	// USERNAME ALREADY EXISTS: PROBLEM
 	$baddata = 1;
 } else {

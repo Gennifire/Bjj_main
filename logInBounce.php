@@ -42,7 +42,7 @@
 	
 	
 	
-	if ($arrayLength != 1) {
+	if ($arrayLength > 1) {
 		// INVALID USERNAME or USERNAME
 		$baddata = 1;
 		
@@ -65,9 +65,9 @@
 					"ADMINISTRATION");
 		// if STATUS UNDEFINED user
 		} else {
-			header("Location: admin-panel.php?user=" . 
+			header("Location: member-dashboard.php?user=" . 
 					$_SESSION['login_user'] . 
-					"STATUS UNDEFINED");
+					"Ordinary User");
 		}
 		exit; 
 	}

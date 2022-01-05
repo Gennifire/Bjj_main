@@ -7,8 +7,9 @@
 	$baddata = 0;
 	
 	
-	$username = $_POST['userEmail'];
-	$password = $_POST['logPassword'];
+	$username = $_POST['user_email'];
+	$password = $_POST['user_password'];
+	
 
 	/*important to keep sign up and sign in hash loops the exact same*/
 	for ($i=1; $i<=100; $i++) {

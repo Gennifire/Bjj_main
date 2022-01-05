@@ -11,28 +11,28 @@ require('includes/connection.php');
 $baddata = 0;
 
 // data from the previous (signup1.php) page
-$regUsername = $_POST['user_email'];
-$regPassword = $_POST['user_cpass'];
+$username = $_POST['user_email'];
+$password = $_POST['user_cpass'];
 
-echo "<script>alert('Password='" . $regPassword . ");</script>";
+echo "<script>alert('Password='" . $password . ");</script>";
 
 //HASH the password 100 times so that it can be compared to other hashed passwords in the DB table
 for ($i = 1; $i <= 100; $i++) {
-	$regPassword = hash('sha512', $regPassword);
+	$password = hash('sha512', $password);
 }
-echo "<script>alert('Hashed password='" . $regPassword . ");</script>";
+echo "<script>alert('Hashed password='" . $password . ");</script>";
 
 // check if username exists in the database table
 $query1 = "SELECT * 
 			FROM tbluser
 			WHERE 
-				user_email = :regUsername
+				user_email = :username
 			AND 
-				user_password = :regPassword";
+				user_password = :password";
 
 $statement = $db->prepare($query1);
-$statement->bindValue(":regUsername", $regUsername);
-$statement->bindValue(":regPassword", $regPassword);
+$statement->bindValue(":username", $username);
+$statement->bindValue(":password", $password);
 
 $statement->execute();
 $all_queries1 = $statement->fetchAll();
@@ -57,13 +57,13 @@ if ($arrayLength != 0) {
 								user_password 
 								) 
 								VALUES 
-								(:regUsername, 
-								:regPassword 
+								(:username, 
+								:password 
 								)";
 
 	$statement = $db->prepare($query2);
-	$statement->bindValue(':regUsername', $regUsername);
-	$statement->bindValue(':regPassword', $regPassword);
+	$statement->bindValue(':username', $username);
+	$statement->bindValue(':password', $password);
 	$statement->execute();
 	$statement->closeCursor();
 

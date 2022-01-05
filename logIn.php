@@ -50,10 +50,10 @@
 		
 			<form action="logInBounce.php" class="login" name="loginForm"  method="post">
 			
-				<input type="text" class="input-box" name="userEmail" id="userEmail" placeholder="Email" required autofocus onchange="return validateLoginForm()">
+				<input type="text" class="input-box" name="user_email" id="user_email" placeholder="Email" required autofocus onchange="return validateLoginForm()">
 				<span id="user_emailError"></span>
 				
-				<input type="password" class="input-box" name="logPassword" id="logPassword" placeholder="Password" required>
+				<input type="password" class="input-box" name="user_password" id="user_password" placeholder="Password" required>
 				<span id="user_passwordError"></span>
 				
 				<div id="check">

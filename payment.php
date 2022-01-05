@@ -1,49 +1,34 @@
 <!DOCTYPE html>
-<?php include("func.php");?>
+<?php include("includes/connection.php");?>
 <html>
 <head>
-	<title>Members details</title>
+	<title>Payment details</title>
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 <body>
-<div class="jumbotron" style="background: url('images/2.jpg') no-repeat;background-size: cover;height: 300px;"></div>	
-
  <div class="container">
 <div class="card">
      <div class="card-body" style="background-color:#3498DB;color:#ffffff;">
          <div class="row">
              <div class="col-md-1">
-    <a href="admin-panel.php" class="btn btn-light ">Go Back</a>
+				<a href="admin-panel.php" class="btn btn-light ">Go Back</a>
              </div>
-             <div class="col-md-3"><h3>Payment Details</h3></div>
-             <div class="col-md-8">
-         <form class="form-group" action="patient_search.php" method="post">
-          <div class="row">
-              
-                 </form></div></div></div>
+           </div>
+		   
      <div class="card-body" style="background-color:#3498DB;color:#ffffff;">
          <div class="card-body">
-    <table class="table table-hover">
-        <thead>
-     <tr>
-            <th>Payment ID </th>
-            <th>Amount</th>
-            <th>Payment Type</th>
-            <th>Customer ID</th>
-           <!-- <th>Customer Name</th>-->
-         
-        </tr>   
-        </thead>
-        
-        <tbody>
-          
-        </tbody>
-    </table>
-    <div class="card-body" style="background-color:#3498DB;color:FFFFFF;">
-                <h3>Make new Payment</h3>
-                </div> 
+			<table class="table table-hover">
+				<thead>
+			 <tr>
+					 <th><h3>Make new Payment</h3></th>
+				 
+				</tr>   
+				</thead>
+				
+				</table>
+			
                 <div class="card-body"></div>
-                <form class="form-group" action="func.php" method="post">
+                <form class="form-group" action="payment-bounce.php" method="post">
                 <label>Payment ID</label>
 					<input type="text" name="Payment_id" class="form-control"><br>
  
@@ -57,6 +42,7 @@
                     
 					<input type="text" name="payment_type" class="form-control"><br> 
 					<input type="submit" class="btn btn-primary" name="pay_submit" value="PAY">
+					</form>
      </div>
     </div>
     </div>

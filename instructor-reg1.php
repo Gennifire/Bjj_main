@@ -38,7 +38,7 @@ $query2 = "INSERT INTO
 			VALUES
 				instructor_expertise_id
 			SELECT 		
-				instructor_expertise_id
+				instructor_expertise_type
 			FROM
 				tblinstructor_expertise";
 		

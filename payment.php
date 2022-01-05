@@ -34,8 +34,8 @@
  
                     <label>Amount</label>
                     <input type="text" name="Amount" class="form-control"><br>
-                    <label>Customer ID</label>
-                    <input type="text" name="customer_id" class="form-control"><br>
+                    <label>Member ID</label>
+                    <input type="text" name="member_id" class="form-control"><br>
                    <!-- <label>Customer Name</label>
                     <input type="text" name="customer_name" class="form-control"><br>-->
                     <label>Payment Type</label>

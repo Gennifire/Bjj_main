@@ -7,6 +7,8 @@ session_start();
 		header("Location: logIn.php");
 		exit;
 	}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +58,7 @@ session_start();
             </div> 
 			
 			<?php 
-						$query = "SELECT * FROM tbluser WHERE users_id = :login_user";
+						$query = "SELECT * FROM tbluser WHERE user_email = :login_user";
 						$statement = $db->prepare($query);
 						$statement->bindValue(":login_user", $login_user);
 						$statement->execute();

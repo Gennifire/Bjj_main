@@ -28,17 +28,17 @@ $statement->bindValue(":instructor_phone", $instructor_phone);
 
 $statement->execute();
 $statement->closeCursor();
-
+header("location: admin-panel.php")
 
 /*Gets expertise*/
-$instructor_expertise_id = $_POST["instructor_expertise_id"];
+/*$instructor_expertise_id = $_POST["instructor_expertise_id"];
 
-$query2 = "INSERT INTO 
+$query2 = "INSERT INTO
 				tbleinstructor
 			VALUES
 				instructor_expertise_id
 			SELECT 		
-				instructor_expertise_type
+				instructor_expertise_id
 			FROM
 				tblinstructor_expertise";
 		
@@ -50,7 +50,7 @@ $statement->bindValue("instructor_expertise_id", $instructor_expertise_id);
 $statement->execute();
 $statement->closeCursor();
 
-header("location: admin-panel.php")
 
 
+*/
 ?>

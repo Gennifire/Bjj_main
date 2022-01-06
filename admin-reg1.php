@@ -2,7 +2,15 @@
 // CONNECT TO THE DATABASE FROM AN INCLUDE FILE
 require_once('includes/connection.php');
 
-$userToBeUpdated = $_POST["selectUser"];
+
+session_start();
+
+	if (empty($_SESSION['login_user'])) {
+		header("Location: logIn.php");
+		exit;
+	}
+	
+	$userToBeUpdated = $_POST["selectUser"];
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +29,7 @@ $userToBeUpdated = $_POST["selectUser"];
 	    <div class="nav-login">
 		   
 		 <a href="logout.php" class="btn btn-primary">Logout</a>	
-					
+				<br><br>	
 	   </div>
 	 </div>
  </nav>

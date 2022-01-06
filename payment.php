@@ -30,17 +30,17 @@
                 <div class="card-body"></div>
                 <form class="form-group" action="payment-bounce.php" method="post">
                 <label>Payment ID</label>
-					<input type="text" name="Payment_id" class="form-control"><br>
+					<input type="text" name="payment_id" id="payment_id" class="form-control"><br>
  
                     <label>Amount</label>
-                    <input type="text" name="Amount" class="form-control"><br>
-                    <label>Member ID</label>
-                    <input type="text" name="member_id" class="form-control"><br>
+                    <input type="text" name="Amount" id="Amount" class="form-control"><br>
+                    <label>Payment time:</label>
+                    <input type="date" name="payment_time" id="payment_time" class="form-control"><br>
                    <!-- <label>Customer Name</label>
                     <input type="text" name="customer_name" class="form-control"><br>-->
                     <label>Payment Type</label>
-                    
-					<input type="text" name="payment_type" class="form-control"><br> 
+                    <input type="text" name="payment_type" id="payment_type" class="form-control"><br> 
+					
 					<input type="submit" class="btn btn-primary" name="pay_submit" value="PAY">
 					</form>
      </div>

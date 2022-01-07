@@ -21,7 +21,7 @@ to do:
 
 -create sign up and sign in x
  -sign up keeps allowing duplicate entries
- -sign in won't let you in, even with correct results.
+ -sign in won't let you in, even with correct results. fixed
  -counts database queries as empty or not there
 
 -dashboard after sign in with ability to edit or remove character. 
@@ -37,12 +37,12 @@ xxx
 -admin delete instructor x
 
 xxx
--user signup
--user login
--user membership buy.
--user update user 
--user delete user
--user schedule class
+-user signup o
+-user login o
+-user membership buy. x
+-user update user x
+-user delete user x
+-user schedule class x
 
 xxx
 -make mock receipt/timetable.

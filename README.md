@@ -52,3 +52,11 @@ xxx
 
 xxx
 -timetable 
+
+×××
+-stats check
+-min max hr
+-calorie amount
+-bmi checker
+-track classes attended
+

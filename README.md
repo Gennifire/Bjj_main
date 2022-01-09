@@ -12,7 +12,7 @@ sidenav
 
 footer 
 
-to do:
+things to do:
 
 -learn selcet o
 -learn insert o
@@ -59,4 +59,6 @@ xxx
 -calorie amount
 -bmi checker
 -track classes attended
+-contact page
+-page for each instructor
 

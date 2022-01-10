@@ -23,6 +23,7 @@ things to do:
  -sign up keeps allowing duplicate entries
  -sign in won't let you in, even with correct results. fixed
  -counts database queries as empty or not there
+ -leave out password and try to get sign up to only look at email to start.
 
 -dashboard after sign in with ability to edit or remove character. 
 

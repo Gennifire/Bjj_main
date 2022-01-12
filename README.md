@@ -21,8 +21,8 @@ things to do:
 
 -create sign up and sign in x
  -sign up keeps allowing duplicate entries
- -sign in won't let you in, even with correct results. fixed
- -counts database queries as empty or not there
+ -sign in won't let you in, even with correct results. fixed for admin(user will not display user data).
+ -counts database queries as empty or not there for user
  -leave out password and try to get sign up to only look at email to start.
 
 -dashboard after sign in with ability to edit or remove character. 

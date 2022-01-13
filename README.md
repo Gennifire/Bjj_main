@@ -45,16 +45,16 @@ xxx
 -user delete user x
 -user schedule class x
 
-xxx
+xxxxx
 -make mock receipt/timetable.
 
-xxx
+xxxxx
 -Logout (have reusable function) o
 
-xxx
+xxxxx
 -timetable 
 
-×××
+×××xx
 -stats check
 -min max hr
 -calorie amount

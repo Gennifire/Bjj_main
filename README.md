@@ -12,6 +12,8 @@ sidenav
 
 footer 
 
+Common css elements
+
 things to do:
 
 -learn selcet o

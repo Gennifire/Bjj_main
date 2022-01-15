@@ -64,4 +64,6 @@ xxxxx
 -track classes attended
 -contact page
 -page for each instructor
-
+  -allow pictures 
+  -contact details for users to see
+  -meet the staff about me section

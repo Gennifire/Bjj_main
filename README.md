@@ -67,4 +67,4 @@ xxxxx
   -allow pictures 
   -contact details for users to see
   -meet the staff about me section
-  -commit
+  -

@@ -77,3 +77,8 @@ xxxxx
 
 ![login](https://user-images.githubusercontent.com/72698786/153197509-bc974f84-d7d2-47d7-bc15-5a8e24164044.JPG)
 
+![sign up](https://user-images.githubusercontent.com/72698786/153198370-536d5419-105f-4762-bee6-8cf8407a93a4.JPG)
+
+
+![adminPanel](https://user-images.githubusercontent.com/72698786/153198397-6ea5a183-3266-4141-995e-71f61c8067eb.JPG)
+

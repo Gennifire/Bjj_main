@@ -16,7 +16,7 @@ Common css elements
 
 things to do:
 
--learn selcet o
+-learn select o
 -learn insert o
 -learn update o
 -learn delete o
@@ -33,6 +33,7 @@ xxx
 -admin update user o
 -admin delete user o
 -admin create user x
+
 
 xxx
 -admin create instructor o
@@ -67,3 +68,7 @@ xxxxx
   -allow pictures 
   -contact details for users to see
   -meet the staff about me section
+
+
+
+
